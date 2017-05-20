@@ -84,7 +84,7 @@ public class Rockford extends Tickable {
 	}
 
 	@Override
-	protected int contactAutreEntitee(Entitee entitee) {
+	public int contactAutreEntitee(Entitee entitee) {
 		if (entitee.is(Pierre)) {
 			if (entitee.getX() - getX() > 0
 					&& Partie.gererNiveau.getNiveau().getMap()[entitee.getX() + 1][entitee.getY()].is(Vide)) {

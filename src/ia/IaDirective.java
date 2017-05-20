@@ -47,7 +47,7 @@ public class IaDirective extends Ia {
 	 *            Le noeud de départ.
 	 * @return Le noeud indiquant le diamant le plus proche.
 	 */
-	private Noeud diamantLePlusProche(Noeud depart) {
+	public Noeud diamantLePlusProche(Noeud depart) {
 		LinkedList<Noeud> file = new LinkedList<Noeud>();
 		file.add(depart);
 		depart.setCout(0);
@@ -78,7 +78,7 @@ public class IaDirective extends Ia {
 	 *            Le Noeud objectif.
 	 * @return Le chemin le plus court.
 	 */
-	private Stack<Noeud> cheminPlusCourt(Noeud depart, Noeud objectif) {
+	public Stack<Noeud> cheminPlusCourt(Noeud depart, Noeud objectif) {
 		List<Noeud> closedList = new LinkedList<Noeud>();
 		Queue<Noeud> openList = new PriorityQueue<Noeud>();
 		openList.add(depart);
@@ -109,7 +109,7 @@ public class IaDirective extends Ia {
 	 *            Le noeud dont on veut les voisins.
 	 * @return Un set des voisins du noeud en paramètre.
 	 */
-	private Set<Noeud> VoisinsNoeud(Noeud u) {
+	public Set<Noeud> VoisinsNoeud(Noeud u) {
 		Set<Noeud> voisins = new HashSet<Noeud>();
 		if (positionValide(u.getX() - 1, u.getY())) {
 			voisins.add(graphe[u.getX() - 1][u.getY()]);
@@ -136,7 +136,7 @@ public class IaDirective extends Ia {
 	 *            La coordonnée en y.
 	 * @return Vrai si tel est le cas, faux sinon.
 	 */
-	private boolean positionValide(int x, int y) {
+	public boolean positionValide(int x, int y) {
 		if (x >= 0 && x < graphe.length && y >= 0 && y < graphe[0].length) {
 			if (graphe[x][y].isTraversable()) {
 				return true;
@@ -237,6 +237,25 @@ public class IaDirective extends Ia {
 	 */
 	public void setBloquer(boolean bloquer) {
 		this.bloquer = bloquer;
+	}
+
+	/**
+	 * Un getter.
+	 * 
+	 * @return L'objet en question.
+	 */
+	public Noeud[][] getGraphe() {
+		return graphe;
+	}
+
+	/**
+	 * Un setter.
+	 * 
+	 * @param graphe
+	 *            L'objet en question.
+	 */
+	public void setGraphe(Noeud[][] graphe) {
+		this.graphe = graphe;
 	}
 
 }
