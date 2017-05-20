@@ -124,7 +124,10 @@ public class IaEvolue extends Ia {
 			generationActuelle++;
 			for (int i = 0; i < (Constantes.NOMBRE_DE_TRY_GENERATION * Constantes.POURCENTAGE_DE_SURVIVANTS)
 					/ 100; i++) {
-				liste2.add(liste.get(i));
+				Score s = new Score(liste.get(i).getScore(), liste.get(i).getParcours(),
+						liste.get(i).getListeDiamants());
+				s.setChemin(liste.get(i).getChemin());
+				liste2.add(s);
 			}
 			for (int i = 0; i < (Constantes.NOMBRE_DE_TRY_GENERATION * Constantes.POURCENTAGE_DE_ALEATOIRE)
 					/ 100; i++) {
