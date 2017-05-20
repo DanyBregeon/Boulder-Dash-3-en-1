@@ -8,7 +8,7 @@ import ia.IaEvolue;
 import main.Partie;
 
 /**
- * Classe servant � comparer et enregistrer un essai d'un niveau.
+ * Classe servant à comparer et enregistrer un essai d'un niveau.
  * 
  * Enregistre le chemin pris dans un string ainsi que le score obtenu et
  * d'autres informations.
@@ -19,17 +19,17 @@ import main.Partie;
 public class Score implements Comparable<Score> {
 
 	/**
-	 * Entier repr�sentant le score obtenu dans cet essai.
+	 * Entier représentant le score obtenu dans cet essai.
 	 */
 	private int score;
 
 	/**
-	 * Entier repr�sentant le nombre de tours durant l'essai.
+	 * Entier représentant le nombre de tours durant l'essai.
 	 */
 	private int parcours;
 
 	/**
-	 * String repr�sentant le chemin pris lors de cet essai.
+	 * String représentant le chemin pris lors de cet essai.
 	 */
 	private String chemin;
 
@@ -39,8 +39,8 @@ public class Score implements Comparable<Score> {
 	private boolean fini;
 
 	/**
-	 * Liste des diamants obtenus lors de cet essai, la cl� est le tick durant
-	 * lequel le diamant a �t� attrap�.
+	 * Liste des diamants obtenus lors de cet essai, la clé est le tick durant
+	 * lequel le diamant a été attrapé.
 	 */
 	private List<Paire<Integer, Long>> listeDiamants = new ArrayList<Paire<Integer, Long>>();
 	private Entitee[][] mapFinParcours;
@@ -63,7 +63,7 @@ public class Score implements Comparable<Score> {
 	}
 
 	/**
-	 * Le compareTo de cet objet est bas� sur des crit�res faits pour am�liorer
+	 * Le compareTo de cet objet est basé sur des critères faits pour améliorer
 	 * les essais.
 	 */
 	@Override

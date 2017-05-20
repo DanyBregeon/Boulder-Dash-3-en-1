@@ -8,22 +8,22 @@ import java.io.PrintWriter;
 import main.Partie;
 
 /**
- * La classe Ecrivain est une classe qui n'est jamais instanci�e, elle dipose de
- * m�thodes statiques servant � cr�er et lire des fichier DASH.
+ * La classe Ecrivain est une classe qui n'est jamais instanciée, elle dipose de
+ * méthodes statiques servant à créer et lire des fichier DASH.
  * 
  * @author Murloc
  *
  */
 public class Ecrivain {
 	/**
-	 * Cette methode cr�e un fichier et �crit du texte dedans.
+	 * Cette methode crée un fichier et écrit du texte dedans.
 	 * 
 	 * @param aEcrire
-	 *            Le texte qui sera �crit dans le fichier.
+	 *            Le texte qui sera écrit dans le fichier.
 	 * @param nom
-	 *            Le nom du fichier futurement cr��.
+	 *            Le nom du fichier futurement créé.
 	 * @param repertoire
-	 *            Le nom du dossier o� le fichier doit �tre cr��.
+	 *            Le nom du dossier ou le fichier doit être créé.
 	 */
 	public static void ecrire(String aEcrire, String nom, String repertoire) {
 		try {
@@ -44,12 +44,12 @@ public class Ecrivain {
 	}
 
 	/**
-	 * Cette m�thode prend en param�tre le chemin d'un fichier DASH et renvoie
-	 * le parcours �crit dans le fichier.
+	 * Cette méthode prend en paraètre le chemin d'un fichier DASH et renvoie
+	 * le parcours écrit dans le fichier.
 	 * 
 	 * @param cheminFichierBD
 	 *            Chemin du fichier DASH.
-	 * @return Le parcours �crit dans le fichier.
+	 * @return Le parcours écrit dans le fichier.
 	 */
 	public static String lireParcours(String cheminFichierBD) {
 		try {

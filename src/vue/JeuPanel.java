@@ -10,7 +10,6 @@ import entitees.abstraites.Entitee;
 import entitees.fixes.Amibe;
 import entitees.fixes.Mur;
 import entitees.fixes.MurEnTitane;
-import entitees.fixes.MurMagique;
 import entitees.fixes.Poussiere;
 import entitees.fixes.Sortie;
 import entitees.tickables.Bombe;
@@ -18,13 +17,14 @@ import entitees.tickables.Diamant;
 import entitees.tickables.Explosion;
 import entitees.tickables.Libellule;
 import entitees.tickables.Luciole;
+import entitees.tickables.MurMagique;
 import entitees.tickables.Pierre;
 import entitees.tickables.Rockford;
 import main.Constantes;
 import main.Partie;
 
 /**
- * La classe JeuPanel hï¿½ritï¿½ de JPanel et sert à afficher un niveau du jeu quand
+ * La classe JeuPanel hï¿½ritï¿½ de JPanel et sert ï¿½ afficher un niveau du jeu quand
  * celui-ci est en mode fenï¿½trï¿½.
  *
  * Elle dispose d'un tableau a 2 dimensions d'entitees et d'un compteur de FPS.

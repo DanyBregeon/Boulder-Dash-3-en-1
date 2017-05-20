@@ -16,9 +16,29 @@ import entitees.abstraites.Entitee;
 import entitees.abstraites.Tickable;
 import main.Partie;
 
+/**
+ * Cette classe représente les entitées Pierres.
+ * 
+ * @author celso
+ */
 public class Pierre extends Tickable {
+
+	/**
+	 * Les éléments de cette liste représentent sur quels types d'élément notre
+	 * objet peut tomber.
+	 */
 	private List<Entitees> deplacementsPossiblesChute = new ArrayList<Entitees>();
 
+	/**
+	 * Constructeur qui prend les coordonnées.
+	 * 
+	 * Ajoute les case de déplacement possibles pour cet objet.
+	 * 
+	 * @param x
+	 *            Coordonnée en x.
+	 * @param y
+	 *            Coordonnée en y.
+	 */
 	public Pierre(int x, int y) {
 		super(x, y);
 		setDestructible(true);
@@ -35,15 +55,15 @@ public class Pierre extends Tickable {
 	public void tick() {
 		if (!bloque || chute) {
 			gererChute();
-		}else{
+		} else {
 			glisser();
 		}
-		bloquer();
+		testBloquer();
 	}
 
 	@Override
 	protected int contactAutreEntitee(Entitee entitee) {
-		
+
 		setDirection('b');
 		if (entitee.is(Rockford)) {
 			exploser(false);
@@ -66,19 +86,35 @@ public class Pierre extends Tickable {
 
 	}
 
+	/**
+	 * Explosion différente car ici il faut jouer un son.
+	 */
 	protected void exploser(boolean popDiamants) {
 		sons.jouerSon1("explosion.wav", 1);
 		for (int i = -1; i < 2; i++) {
 			for (int j = 0; j <= 2; j++) {
-				explosion(i,j,popDiamants);
+				explosion(i, j, popDiamants);
 			}
 		}
 	}
 
-	protected void bloquer() {
+	/**
+	 * Change le booleen bloque si il y a de la place en dessous.
+	 */
+	protected void testBloquer() {
 		bloque = !(placeLibreChute(getX(), getY() + 1));
 	}
 
+	/**
+	 * Regarde si il y a de la place pour tomber à la case de coordonnées
+	 * entrées en paramètre.
+	 * 
+	 * @param x
+	 *            Coordonnée en x.
+	 * @param y
+	 *            Coordonnée en y.
+	 * @return Vrai si c'est le cas, faux sinon.
+	 */
 	protected boolean placeLibreChute(int x, int y) {
 		for (Entitees e : deplacementsPossiblesChute) {
 			if (Partie.gererNiveau.getNiveau().getMap()[x][y].getEnumeration().equals(e)) {

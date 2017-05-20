@@ -15,9 +15,9 @@ import entitees.tickables.Luciole;
 public abstract class Ennemi extends Tickable {
 
 	/**
-	 * Constructeur Ennemi.
+	 * Constructeur qui prend les coordonnées.
 	 * 
-	 * Prend des coordonnées en paramètre.
+	 * Ajoute les case de déplacement possibles pour ces objets.
 	 * 
 	 * @param x
 	 *            Coordonnée en x.
@@ -30,19 +30,15 @@ public abstract class Ennemi extends Tickable {
 		getDeplacementsPossibles().add(Amibe);
 	}
 
-	@Override
-	protected int contactAutreEntitee(Entitee entitee) {
-		if (entitee.getEnumeration() == (Rockford)) {
-			entitee.mourir();
-		} else if (entitee.getEnumeration() == (Amibe)) {
-			if (getClass().equals(Luciole.class))
-				exploser(false);
-			else
-				exploser(true);
-			return 0;
+	public void tick() {
+		if (!bloque) {
+			iASetDirection();
+			seDeplacer();
 		}
-		return 1;
+		testBloquer();
 	}
+
+	protected abstract void iASetDirection();
 
 	/**
 	 * Retourne vrai si la case face à l'objet est accessible pour lui.
@@ -193,4 +189,17 @@ public abstract class Ennemi extends Tickable {
 		}
 	}
 
+	@Override
+	protected int contactAutreEntitee(Entitee entitee) {
+		if (entitee.getEnumeration() == (Rockford)) {
+			entitee.mourir();
+		} else if (entitee.getEnumeration() == (Amibe)) {
+			if (getClass().equals(Luciole.class))
+				exploser(false);
+			else
+				exploser(true);
+			return 0;
+		}
+		return 1;
+	}
 }

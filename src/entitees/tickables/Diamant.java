@@ -11,8 +11,23 @@ import entitees.abstraites.Entitee;
 import entitees.abstraites.Tickable;
 import main.Partie;
 
+/**
+ * Cette classe représente les entitées Diamants.
+ * 
+ * @author celso
+ */
 public class Diamant extends Tickable {
 
+	/**
+	 * Constructeur qui prend les coordonnées.
+	 * 
+	 * Ajoute les case de déplacement possibles pour cet objet.
+	 * 
+	 * @param x
+	 *            Coordonnée en x.
+	 * @param y
+	 *            Coordonnée en y.
+	 */
 	public Diamant(int x, int y) {
 		super(x, y);
 		setDestructible(true);
@@ -48,10 +63,13 @@ public class Diamant extends Tickable {
 
 	@Override
 	public void tick() {
-		rockfordEndessous();
 		gererChute();
+		rockfordEndessous();
 	}
 
+	/**
+	 * Explosion différente car ici il faut jouer un son.
+	 */
 	protected void exploser(boolean popDiamants) {
 		sons.jouerSon1("explosion.wav", 1);
 		for (int i = -1; i < 2; i++) {
@@ -61,6 +79,9 @@ public class Diamant extends Tickable {
 		}
 	}
 
+	/**
+	 * Regarde si Rockford se trouve en dessous, si oui l'objet se met à chuter.
+	 */
 	private void rockfordEndessous() {
 		if (Partie.gererNiveau.getNiveau().getMap()[getX()][getY() + 1].is(Rockford)) {
 			setChute(true);

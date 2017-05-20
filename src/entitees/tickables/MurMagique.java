@@ -1,20 +1,36 @@
-package entitees.fixes;
+package entitees.tickables;
 
 import static entitees.abstraites.Entitee.Entitees.Diamant;
 import static entitees.abstraites.Entitee.Entitees.MurMagique;
-import static entitees.abstraites.Entitee.Entitees.Pierre;
 import static entitees.abstraites.Entitee.Entitees.Vide;
 
 import entitees.abstraites.Entitee;
 import entitees.abstraites.Tickable;
-import entitees.tickables.Diamant;
-import entitees.tickables.Pierre;
+import entitees.fixes.Mur;
 import main.Partie;
 
+/**
+ * Cette classe représente les entitées Murs Magiques.
+ * 
+ * @author celso
+ */
 public class MurMagique extends Tickable {
 
+	/**
+	 * Représente le nombre d'utilisations possibles de ce mur magique.
+	 */
 	private int magicWallTime;
 
+	/**
+	 * Constructeur qui prend les coordonnées.
+	 * 
+	 * @param x
+	 *            Coordonnée en x.
+	 * @param y
+	 *            Coordonnée en y.
+	 * @param magicWallTime
+	 *            Nombre d'utilisations possibles de ce mur magique.
+	 */
 	public MurMagique(int x, int y, int magicWallTime) {
 		super(x, y);
 		this.magicWallTime = magicWallTime;
@@ -22,10 +38,12 @@ public class MurMagique extends Tickable {
 		enumeration = MurMagique;
 	}
 
-	public int getMagicWallTime() {
-		return magicWallTime;
-	}
-
+	/**
+	 * Décrémente le nombre d'utilisations possibles du mur magique.
+	 * 
+	 * Transforme le mur magique en mur normal si la nombre d'utilisation est
+	 * égal à 0.
+	 */
 	public void decrementerMagicWallTime() {
 		magicWallTime--;
 		if (magicWallTime <= 0) {
@@ -34,6 +52,17 @@ public class MurMagique extends Tickable {
 		}
 	}
 
+	/**
+	 * Appelé à chaque tick.
+	 * 
+	 * Regarde si il y a du vide en dessous de l'objet et s'il y a un
+	 * diamant/pierre a dessus.
+	 * 
+	 * Si tel est le cas le détruit est crée l'entité inverse en dessous,
+	 * ensuite appelle {@link MurMagique#decrementerMagicWallTime()}..
+	 * 
+	 * @return Vrai si une transformation a eu lieu, faux sinon.
+	 */
 	public boolean traverser() {
 		if (Partie.gererNiveau.getNiveau().getMap()[getX()][getY() + 1].is(Vide)) {
 			if (Partie.gererNiveau.getNiveau().getMap()[getX()][getY() - 1].is(Diamant)) {
@@ -65,6 +94,15 @@ public class MurMagique extends Tickable {
 	@Override
 	public void tick() {
 		traverser();
+	}
+
+	/**
+	 * Un getter.
+	 * 
+	 * @return L'objet en question.
+	 */
+	public int getMagicWallTime() {
+		return magicWallTime;
 	}
 
 }

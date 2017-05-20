@@ -9,8 +9,8 @@ import outils.Ecrivain;
 import outils.Score;
 
 /***
- * La classe SousMenu n'est jamais instanci�e. contient des m�thodes statics
- * g�rant le lancement et la direction que doit prendre le programme au
+ * La classe SousMenu n'est jamais instanciée. contient des méthodes statics
+ * gérant le lancement et la direction que doit prendre le programme au
  * lancement.
  * 
  * Elle lance des m�thodes de la classe {@link Partie}.
@@ -24,9 +24,9 @@ public class SousMenu {
 	 * Lance une partie d'un seul niveau.
 	 * 
 	 * @param cheminFichierBDCFF
-	 *            Le chemin du fichier BDCFF o� se trouve le niveau.
+	 *            Le chemin du fichier BDCFF ou se trouve le niveau.
 	 * @param niveau
-	 *            Le num�ro du niveau voulu.
+	 *            Le numéro du niveau voulu.
 	 */
 	public static void lancerNiveau(String cheminFichierBDCFF, int niveau) {
 		Partie.commencerPartie(cheminFichierBDCFF, niveau);
@@ -36,32 +36,32 @@ public class SousMenu {
 	 * Lance une partie de tous les niveaux du fichier BDCFF.
 	 * 
 	 * @param cheminFichierBDCFF
-	 *            Le chemin du fichier BDCFF o� se trouve le niveau.
+	 *            Le chemin du fichier BDCFF ou se trouve le niveau.
 	 */
 	public static void lancerTousLesNiveaux(String cheminFichierBDCFF) {
 		Partie.commencerPartie(cheminFichierBDCFF);
 	}
 
 	/**
-	 * Affiche sur la console les infos d'un fichier BDCFF pass� en param�tre.
+	 * Affiche sur la console les infos d'un fichier BDCFF passé en paramètre.
 	 * 
 	 * @param cheminFichierBDCFF
-	 *            Le chemin du fichier BDCFF o� se trouve le niveau.
+	 *            Le chemin du fichier BDCFF ou se trouve le niveau.
 	 */
 	public static void lireInfos(String cheminFichierBDCFF) {
 		System.out.println(Loader.lireInfos(cheminFichierBDCFF));
 	}
 
 	/**
-	 * Cr�e un fichier DASH contenant le r�sultat du meilleur essai parmis les
-	 * strat�gies tent�s (Seulement les strat�gies non �volutives ici).
+	 * Crée un fichier DASH contenant le résultat du meilleur essai parmis les
+	 * stratégies tentés (Seulement les stratégies non évolutives ici).
 	 * 
 	 * @param strategie
-	 *            La strat�gie voulue.
+	 *            La stratégie voulue.
 	 * @param cheminFichierBDCFF
-	 *            Le chemin du fichier BDCFF o� se trouve le niveau.
+	 *            Le chemin du fichier BDCFF ou se trouve le niveau.
 	 * @param niveau
-	 *            Le num�ro du niveau voulu.
+	 *            Le numéro du niveau voulu.
 	 */
 	public static void calculerStrategie(String strategie, String cheminFichierBDCFF, int niveau) {
 		System.out.println("Calcul en cours...\n");
@@ -70,16 +70,16 @@ public class SousMenu {
 
 	/**
 	 * 
-	 * Cr�e un fichier DASH contenant le r�sultat du meilleur essai parmis les
-	 * strat�gies tent�s (Seulement les strat�gies �volutives ici).
+	 * Crée un fichier DASH contenant le résultat du meilleur essai parmis les
+	 * stratégies tentés (Seulement les stratégies évolutives ici).
 	 * 
 	 * @param strategie
-	 *            La strat�gie voulue.
+	 *            La stratégie voulue.
 	 * @param nbGenerations
 	 * @param cheminFichierBDCFF
-	 *            Le chemin du fichier BDCFF o� se trouve le niveau.
+	 *            Le chemin du fichier BDCFF ou se trouve le niveau.
 	 * @param niveau
-	 *            Le num�ro du niveau voulu.
+	 *            Le numéro du niveau voulu.
 	 */
 	public static void calculerStrategieEvol(String strategie, int nbGenerations, String cheminFichierBDCFF,
 			int niveau) {
@@ -88,33 +88,33 @@ public class SousMenu {
 	}
 
 	/**
-	 * Rejoue une partie d'un niveau en jouant les d�placements se trouvant dans
-	 * le fichier DASH pass� en param�tre.
+	 * Rejoue une partie d'un niveau en jouant les déplacements se trouvant dans
+	 * le fichier DASH passé en paramètre.
 	 * 
 	 * @param cheminFichierDASH
 	 *            Le chemin du fichier DASH.
 	 * @param cheminFichierBDCFF
-	 *            Le chemin du fichier BDCFF o� se trouve le niveau.
+	 *            Le chemin du fichier BDCFF ou se trouve le niveau.
 	 * @param niveau
-	 *            Le num�ro du niveau voulu.
+	 *            Le numéro du niveau voulu.
 	 */
 	public static void rejouerNiveau(String cheminFichierDASH, String cheminFichierBDCFF, int niveau) {
 		Partie.jouerFichier(cheminFichierBDCFF, niveau, Ecrivain.lireParcours(cheminFichierDASH));
 	}
 
 	/**
-	 * Affiche les meilleurs r�sultats des deux strat�gies voulues.
+	 * Affiche les meilleurs résultats des deux stratégies voulues.
 	 * 
 	 * @param nombrePartie
 	 *            Le nombre de partie voulues.
 	 * @param strategie1
-	 *            La strat�gie 1 voulue.
+	 *            La stratégie 1 voulue.
 	 * @param strategie2
-	 *            La strat�gie 2 voulue.
+	 *            La stratégie 2 voulue.
 	 * @param cheminFichierBDCFF
-	 *            Le chemin du fichier BDCFF o� se trouve le niveau.
+	 *            Le chemin du fichier BDCFF ou se trouve le niveau.
 	 * @param niveau
-	 *            Le num�ro du niveau voulu.
+	 *            Le numéro du niveau voulu.
 	 */
 	public static void simulerNiveau(int nombrePartie, String strategie1, String strategie2, String cheminFichierBDCFF,
 			int niveau) {
@@ -179,6 +179,13 @@ public class SousMenu {
 		System.exit(1);
 	}
 
+	/**
+	 * Appelé à la fin d'une partie d'IA, enregistre son essai et demande à
+	 * l'utilisateur si il veut voir le résultat.
+	 * 
+	 * @param s
+	 *            Le score que l'IA a obtenu.
+	 */
 	public static void finIA(Score s) {
 		if (!Partie.simulation) {
 

@@ -7,19 +7,19 @@ import entitees.abstraites.Entitee;
 import entitees.fixes.Amibe;
 import entitees.fixes.Mur;
 import entitees.fixes.MurEnTitane;
-import entitees.fixes.MurMagique;
 import entitees.fixes.Poussiere;
 import entitees.fixes.Sortie;
 import entitees.fixes.Vide;
 import entitees.tickables.Diamant;
 import entitees.tickables.Libellule;
 import entitees.tickables.Luciole;
+import entitees.tickables.MurMagique;
 import entitees.tickables.Pierre;
 import entitees.tickables.Rockford;
 
 /**
- * La classe Loader n'est jamais instanci�e, elle sert � cr�er des ensembles de
- * niveaux � partir des fichiers BDCFF.
+ * La classe Loader n'est jamais instanciée, elle sert à créer des ensembles de
+ * niveaux à partir des fichiers BDCFF.
  * 
  * @see EnsembleDeNiveaux
  * 
@@ -29,11 +29,11 @@ import entitees.tickables.Rockford;
 public class Loader {
 
 	/**
-	 * Cette m�thode prend en param�tre un fichier BDCFF et renvoie un ensemble
-	 * de niveaux ayant la liste de tous les niveaux pr�sents dans le fichier
+	 * Cette méthode prend en paramètre un fichier BDCFF et renvoie un ensemble
+	 * de niveaux ayant la liste de tous les niveaux présents dans le fichier
 	 * BDCFF.
 	 * 
-	 * Elle d�coupe les fichiers en bouts de string qu'elle envoie �
+	 * Elle découpe les fichiers en bouts de string qu'elle envoie à
 	 * {@link Loader#charger_niveau(String)} qui en fait des objets
 	 * {@link Niveau}.
 	 * 
@@ -85,12 +85,12 @@ public class Loader {
 	}
 
 	/**
-	 * M�thode qui prend en param�tre un string contenant un niveau boulder dash
+	 * Méthode qui prend en paramètre un string contenant un niveau boulder dash
 	 * et en fait un objet {@link Niveau}.
 	 * 
 	 * @param niveau
 	 *            Le string contenant un niveau boulder dash.
-	 * @return Le niveau mod�lis� � partir du string.
+	 * @return Le niveau modélisé à partir du string.
 	 */
 	private static Niveau charger_niveau(String niveau) {
 		String diamond;
@@ -168,7 +168,7 @@ public class Loader {
 	}
 
 	/**
-	 * Cette m�thode prend en param�tre un fichier BDCFF et les infos de ce
+	 * Cette méthode prend en paramètre un fichier BDCFF et les infos de ce
 	 * fichier.
 	 * 
 	 * 
@@ -206,22 +206,22 @@ public class Loader {
 	}
 
 	/**
-	 * Cette m�thode cr�e un objet {@link Entitee} � partir de diverses
+	 * Cette méthode crée un objet {@link Entitee} à partir de diverses
 	 * informations.
 	 * 
-	 * Elle est appel�e par {@link Loader#charger_niveau(String)} pour cr�er la
+	 * Elle est appelée par {@link Loader#charger_niveau(String)} pour créer la
 	 * carte du niveau.
 	 * 
 	 * @param car
-	 *            Le caract�re repr�sentant l'entit�e.
+	 *            Le caractère représentant l'entitée.
 	 * @param x
-	 *            La coordonn�e en x de l'entit�e.
+	 *            La coordonnée en x de l'entitée.
 	 * @param y
-	 *            La coordonn�e en y de l'entit�e.
+	 *            La coordonnée en y de l'entitée.
 	 * @param magicWallTime
-	 *            Le nombre d'utilisations limites de l'entit�e si celle si est
+	 *            Le nombre d'utilisations limites de l'entitée si celle si est
 	 *            un mur magique.
-	 * @return L'entit�e voulue.
+	 * @return L'entitée voulue.
 	 */
 	public static Entitee creerEntitee(char car, int x, int y, int magicWallTime) {
 		if (car == 'w') {
@@ -254,17 +254,17 @@ public class Loader {
 	}
 
 	/**
-	 * Prend un string en param�tre et renvoit un sous-string se trouvant dans
-	 * le premier string qui est d�limit� par le deuxi�me string et le troisi�me
-	 * string tous deux en param�tre.*
+	 * Prend un string en paramètre et renvoit un sous-string se trouvant dans
+	 * le premier string qui est délimité par le deuxième string et le troisième
+	 * string tous deux en paramètre.*
 	 * 
 	 * @param texte
 	 *            Le string source.
 	 * @param string1
-	 *            Le d�limiteur 1.
+	 *            Le délimiteur 1.
 	 * @param string2
-	 *            Le d�limiteur 2.
-	 * @return Le r�sultat.
+	 *            Le délimiteur 2.
+	 * @return Le résultat.
 	 */
 	private static String getStr(String texte, String string1, String string2) {
 		String s = getStr(texte, string1);
@@ -272,14 +272,14 @@ public class Loader {
 	}
 
 	/**
-	 * Prend un string en param�tre et renvoit un sous-string se trouvant dans
-	 * le premier string qui est d�limit� par le deuxi�me string en param�tre.
+	 * Prend un string en paramètre et renvoit un sous-string se trouvant dans
+	 * le premier string qui est délimité par le deuxième string en paramétre.
 	 * 
 	 * @param texte
 	 *            Le string source.
 	 * @param string1
-	 *            Le d�limiteur.
-	 * @return Le r�sultat.
+	 *            Le délimiteur.
+	 * @return Le résultat.
 	 */
 	private static String getStr(String texte, String string1) {
 		return texte.substring(texte.indexOf(string1) + string1.length());

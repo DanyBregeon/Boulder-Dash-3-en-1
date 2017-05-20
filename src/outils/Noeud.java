@@ -7,11 +7,11 @@ import entitees.fixes.Vide;
 import entitees.tickables.Diamant;
 
 /**
- * Classe repr�sentant un noeud d'un graphe.
+ * Classe représentant un noeud d'un graphe.
  * 
- * Le contenu d'un noeud est une entit�e.
+ * Le contenu d'un noeud est une entitée.
  * 
- * Elle poss�de les atributs utiles pour effectuer des algorithmes dans les
+ * Elle possède les atributs utiles pour effectuer des algorithmes dans les
  * graphes.
  * 
  * @see Entitee
@@ -25,39 +25,39 @@ public class Noeud implements Comparable<Noeud> {
 	private Entitee entite;
 
 	/**
-	 * Les coordon�es du Noeud.
+	 * Les coordonées du Noeud.
 	 */
 	private int x, y;
 
 	/**
-	 * Le cout du noeud (utilis� en algorithmique de graphes).
+	 * Le cout du noeud (utilisé en algorithmique de graphes).
 	 */
 	private int cout;
 
 	/**
-	 * L'heuristique du noeud (utilis� en algorithmique de graphes).
+	 * L'heuristique du noeud (utilisé en algorithmique de graphes).
 	 */
 	private int heuristique;
 
 	/**
-	 * La traversabilit� du noeud (utilis� en algorithmique de graphes).
+	 * La traversabilité du noeud (utilisé en algorithmique de graphes).
 	 */
 	private boolean traversable;
 
 	/**
-	 * Le noeud p�re (utilis� en algorithmique de graphes).
+	 * Le noeud père (utilisé en algorithmique de graphes).
 	 */
 	private Noeud pere;
 
 	/**
-	 * L'�tat du noeud (utilis� en algorithmique de graphes).
+	 * L'�tat du noeud (utilisé en algorithmique de graphes).
 	 */
 	private char etat;
 
 	/**
 	 * Constructeur Noeud.
 	 * 
-	 * Prend en param�tre une entit�e et cr�e un noeud.
+	 * Prend en paramètre une entitée et crée un noeud.
 	 * 
 	 * @param entite
 	 *            Le contenu du noeud.

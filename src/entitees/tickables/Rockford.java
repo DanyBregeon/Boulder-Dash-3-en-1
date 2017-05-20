@@ -16,12 +16,40 @@ import entitees.abstraites.Tickable;
 import main.Constantes;
 import main.Partie;
 
+/**
+ * Cette classe représente les entitées Rockfords.
+ * 
+ * @author celso
+ */
 public class Rockford extends Tickable {
 
+	/**
+	 * Représente la dernière direction (parmis gauche ou droite) que Rockford a
+	 * pris. Utile pour gérer le sprite de Rockford.
+	 */
 	private char ancienneDirection = 'd';
+
+	/**
+	 * Représente le nombre de nombes dont Rockford dispose.
+	 */
 	private int nombreDeBombe = Constantes.NOMBRE_DE_BOMBES;
+
+	/**
+	 * Est vrai si l'utilisateur a appuyé sur le bouton poru poser une bombe,
+	 * quand rockford changera de case redeviendra faux.
+	 */
 	private boolean bombeAPoser = false;
 
+	/**
+	 * Constructeur qui prend les coordonnées.
+	 * 
+	 * Ajoute les case de déplacement possibles pour cet objet.
+	 * 
+	 * @param x
+	 *            Coordonnée en x.
+	 * @param y
+	 *            Coordonnée en y.
+	 */
 	public Rockford(int x, int y) {
 		super(x, y);
 		setDestructible(true);
@@ -37,6 +65,13 @@ public class Rockford extends Tickable {
 		enumeration = Rockford;
 	}
 
+	/**
+	 * Ramasse le diamant passé en paramètre, améliore le score de
+	 * {@link Partie#gererNiveau}.
+	 * 
+	 * @param d
+	 *            Le diamant ramassé.
+	 */
 	public void ramasserDiamant(Diamant d) {
 		if (Partie.gererNiveau.getNbDiamants() >= Partie.gererNiveau.getNiveau().getDiamonds_required()) {
 			Partie.gererNiveau
@@ -101,6 +136,10 @@ public class Rockford extends Tickable {
 		}
 	}
 
+	/**
+	 * Regarde si le joueur a appuyé sur la touche pour poser une bombe, si oui
+	 * pose une bombe à l'ancienne case de rockford.
+	 */
 	private void checkBombe() {
 		if (bombeAPoser == true && !Partie.gererNiveau.isTourParTour()) {
 			int x = 0, y = 0;
@@ -135,6 +174,11 @@ public class Rockford extends Tickable {
 
 	}
 
+	/**
+	 * Différent car il faut jouer un son.
+	 * 
+	 * @return Vrai si un déplacement a eu lieu, faux sinon.
+	 */
 	private boolean deplacement() {
 		if (getDirection() != ' ') {
 			sons.jouerSon1("walk_earth.wav", 1);
@@ -144,6 +188,9 @@ public class Rockford extends Tickable {
 		return false;
 	}
 
+	/**
+	 * Différent car il faut jouer un son.
+	 */
 	public boolean mourir() {
 		super.mourir();
 		sons.jouerSon3("mortRockford.wav", 1);
@@ -151,6 +198,10 @@ public class Rockford extends Tickable {
 		return true;
 	}
 
+	/**
+	 * Camoufle ou décamoufle Rockford si le joueur appuye sur la touche
+	 * approprié.
+	 */
 	public void checkCamouflage() {
 		if (Partie.gererNiveau.getToucheClavier() == 'p' && enumeration == Rockford) {
 			seCamoufler();
@@ -159,6 +210,16 @@ public class Rockford extends Tickable {
 		}
 	}
 
+	/*
+	 * Camoufle Rockford.
+	 * 
+	 * Change l'énumération de Rockford afin de changer son comportement envers
+	 * les autres entitées.
+	 * 
+	 * Change aussi les déplacements possibles de rockford, (ne sert à rien dans
+	 * cette version, mais utile si on veut donner de la gravité à
+	 * RockfordPierre.
+	 */
 	private void seCamoufler() {
 		enumeration = Pierre;
 		getDeplacementsPossibles().remove(Poussiere);
@@ -169,6 +230,16 @@ public class Rockford extends Tickable {
 		getDeplacementsPossibles().add(Amibe);
 	}
 
+	/*
+	 * Déamoufle Rockford.
+	 * 
+	 * Change l'énumération de Rockford afin de changer son comportement envers
+	 * les autres entitées.
+	 * 
+	 * Change aussi les déplacements possibles de rockford, (ne sert à rien dans
+	 * cette version, mais utile si on veut donner de la gravité à
+	 * RockfordPierre.
+	 */
 	private void seDecamoufler() {
 		enumeration = Rockford;
 		getDeplacementsPossibles().add(Poussiere);
@@ -179,20 +250,41 @@ public class Rockford extends Tickable {
 		getDeplacementsPossibles().remove(Amibe);
 	}
 
+	/**
+	 * Controle le posage de bombe.
+	 * 
+	 * Si le nombre de bombes disponibles est ok, change le booleen aproprié.
+	 */
 	public void poserBombe() {
 		if (nombreDeBombe > 0) {
 			bombeAPoser = true;
 		}
 	}
 
+	/**
+	 * Un getter.
+	 * 
+	 * @return L'objet en question.
+	 */
 	public boolean camouflageActif() {
 		return getEnumeration() == Entitee.Entitees.Pierre;
 	}
 
+	/**
+	 * Un getter.
+	 * 
+	 * @return L'objet en question.
+	 */
 	public char getAncienneDirection() {
 		return ancienneDirection;
 	}
 
+	/**
+	 * Un setter.
+	 * 
+	 * @param ancienneDirection
+	 *            L'objet en question.
+	 */
 	public void setAncienneDirection(char ancienneDirection) {
 		this.ancienneDirection = ancienneDirection;
 	}

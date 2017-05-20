@@ -25,23 +25,97 @@ import vue.GraphiqueConsole;
 import vue.JeuPanel;
 import vue.ScorePanel;
 
+/**
+ * La classe Partie gère une partie (c'est à dire tous les essais de tous les
+ * niveaux d'un fichier BDCFF, ou d'un seul niveau si l'utilisateur l'a choisi).
+ * 
+ * @author celso
+ *
+ */
 public class Partie {
+	/**
+	 * Stock les scores obtenus à chaque niveau.
+	 */
 	public static final List<Integer> SCORES = new ArrayList<Integer>();
+	/**
+	 * Stock le chemin du fichier BDCFF utilisé sur cette partie.
+	 */
 	public static String cheminFichier;
+	/**
+	 * Booléen utilisé par l'ia évolutive pour ne pas provoquer de bug quand les
+	 * générations sont finies.
+	 */
 	public static boolean finiEvolution;
-	public static EnsembleDeNiveaux ensembleDeNiveau;
-	public static int niveau;
-	public static GererNiveau gererNiveau;
-	public static boolean tousLesNiveaux;
-	public static boolean IA;
-	public static Ia ia;
-	public static boolean lecture, simulation;
-	public static String parcours;
-	public static SonToolKit sons = new SonToolKit();
-	static DateFormat df = new SimpleDateFormat("dd:MM:yyyy_HH:mm:ss");
-	static Date today = Calendar.getInstance().getTime();
-	static String dateDebut = df.format(today);
 
+	/**
+	 * Stock l'ensemble de niveaux du fichier BDCFF.
+	 */
+	public static EnsembleDeNiveaux ensembleDeNiveau;
+
+	/**
+	 * Indique le numéro du niveau actuel aucun on joue.
+	 */
+	public static int niveau;
+
+	/**
+	 * L'objet qui permet de gérer l'essai actuel dans lequel le joueur/ia joue.
+	 */
+	public static GererNiveau gererNiveau;
+
+	/**
+	 * Booleen indiquant si l'utilisateur veut jouer à tous les niveaux ou a un
+	 * seul, vrai = tous les niveaux.
+	 */
+	public static boolean tousLesNiveaux;
+
+	/**
+	 * Booleen indiquant si c'est l'ia qui joue.
+	 */
+	public static boolean IA;
+
+	/**
+	 * L'ia qui joue si tel est le cas.
+	 */
+	public static Ia ia;
+
+	/**
+	 * Booleens indiquant c'est on est en mode lecture ou en mode simulation.
+	 */
+	public static boolean lecture, simulation;
+
+	/**
+	 * String stockant le chemin pris par le joueur durant le GererNiveau
+	 * actuel.
+	 */
+	public static String parcours;
+
+	/**
+	 * Objet servant à effectuer des sons globaux.
+	 */
+	public static SonToolKit sons = new SonToolKit();
+
+	/**
+	 * Stock la date actuel, utile pour sauvegarder à la fin l'essai.
+	 */
+	public static DateFormat df = new SimpleDateFormat("dd:MM:yyyy_HH:mm:ss");
+
+	/**
+	 * Utile pour la date.
+	 */
+	public static Date today = Calendar.getInstance().getTime();
+
+	/*
+	 * Utile pour la date.
+	 */
+	public static String dateDebut = df.format(today);
+
+	/**
+	 * Méthode appellée pour commener toutes les parties du niveau BDCFF dont le
+	 * chemin est en paramètre.
+	 * 
+	 * @param chemin
+	 *            Chemin du fichier BDCFF.
+	 */
 	public static void commencerPartie(String chemin) {
 		ensembleDeNiveau = Loader.charger_ensemble_de_niveaux(chemin);
 		tousLesNiveaux = true;
@@ -49,6 +123,15 @@ public class Partie {
 		lancerNiveau();
 	}
 
+	/**
+	 * Méthode appellée pour commener le niveau choisi du fichier BDCFF dont le
+	 * chemin est en paramètre.
+	 * 
+	 * @param chemin
+	 *            Chemin du fichier BDCFF.
+	 * @param niveau
+	 *            Niveau choisi.
+	 */
 	public static void commencerPartie(String chemin, int niveau) {
 		ensembleDeNiveau = Loader.charger_ensemble_de_niveaux(chemin);
 		tousLesNiveaux = false;
@@ -56,6 +139,18 @@ public class Partie {
 		lancerNiveau();
 	}
 
+	/**
+	 * Méthode appellée pour commener le niveau choisi du fichier BDCFF dont le
+	 * chemin est en paramètre, en mode lecture, c'est à dire que l'ia va jouer
+	 * le parcour en paramètre.
+	 * 
+	 * @param chemin
+	 *            Chemin du fichier BDCFF.
+	 * @param niveau
+	 *            Niveau choisi.
+	 * @param parcours
+	 *            Parcours à executer.
+	 */
 	public static void jouerFichier(String cheminFichierBDCFF, int niveau, String parcours) {
 		ensembleDeNiveau = Loader.charger_ensemble_de_niveaux(cheminFichierBDCFF);
 		cheminFichier = cheminFichierBDCFF;
@@ -66,6 +161,22 @@ public class Partie {
 		lancerNiveau();
 	}
 
+	/**
+	 * Méthode appellée pour commener le niveau choisi du fichier BDCFF dont le
+	 * chemin est en paramètre, en mode lecture, c'est à dire que l'ia va jouer
+	 * le parcour en paramètre.
+	 * 
+	 * Retourne un score, utilisé durant les simulations et les ia évolutives
+	 * pour comparer les scores.
+	 * 
+	 * @param chemin
+	 *            Chemin du fichier BDCFF.
+	 * @param niveau
+	 *            Niveau choisi.
+	 * @param parcours
+	 *            Parcours à executer.
+	 * @return Le score obtenu.
+	 */
 	public static Score jouerFichierScore(String chemin, int niveau, String parcours) {
 		ensembleDeNiveau = Loader.charger_ensemble_de_niveaux(chemin);
 		cheminFichier = chemin;
@@ -99,6 +210,9 @@ public class Partie {
 		return s;
 	}
 
+	/**
+	 * Reset le niveau actuel, c'est à dire change d'objet GererNiveau.
+	 */
 	public static void resetNiveau() {
 		if (IA) {
 			gererNiveau = new GererNiveau(ensembleDeNiveau.getNiveaux().get(niveau - 1).clone());
@@ -117,6 +231,21 @@ public class Partie {
 
 	}
 
+	/**
+	 * Initialise l'ia suivant la stratégie passée en paramètre (Sauf pour les
+	 * ia évolutives) et la fais jouer sur le niveau choisi du fichier BDCFF
+	 * choisi.
+	 * 
+	 * Retourne le score obtenu.
+	 * 
+	 * @param strategie
+	 *            L'ia voulue.
+	 * @param cheminFichierBDCFF
+	 *            Le chemin du fichier BDCFF contenant le niveau.
+	 * @param niveau
+	 *            Le niveau voulu.
+	 * @return Le score obtenu.
+	 */
 	public static Score calculerStrategie(String strategie, String cheminFichierBDCFF, int niveau) {
 		IA = true;
 
@@ -140,6 +269,21 @@ public class Partie {
 		return score;
 	}
 
+	/**
+	 * Initialise l'ia suivant la stratégie passée en paramètre (Sauf pour les
+	 * ia non évolutives) et la fais jouer sur le niveau choisi du fichier BDCFF
+	 * choisi.
+	 * 
+	 * Retourne le score obtenu.
+	 * 
+	 * @param strategie
+	 *            L'ia voulue.
+	 * @param cheminFichierBDCFF
+	 *            Le chemin du fichier BDCFF contenant le niveau.
+	 * @param niveau
+	 *            Le niveau voulu.
+	 * @return Le score obtenu.
+	 */
 	public static Score calculerStrategieEvolue(String strategie, int nbGenerations, String cheminFichierBDCFF,
 			int niveau) {
 		IA = true;
@@ -165,6 +309,11 @@ public class Partie {
 		return score;
 	}
 
+	/**
+	 * Appelée par l'objet GererNiveau afin de finir le niveau actuel, lance le
+	 * prochain niveau s'il le faut ou lance les méthoes gérant la fin du
+	 * programme sinon.
+	 */
 	public static void finNiveau() {
 		sons.stopAll();
 		finiEvolution = true;
@@ -186,6 +335,10 @@ public class Partie {
 		}
 	}
 
+	/**
+	 * Méthode de fin utilisé pour afficher l'écran de fin en mode graphique ou
+	 * console.
+	 */
 	public static void fin() {
 		Coeur.running = false;
 		if (Coeur.graphique) {
@@ -203,6 +356,10 @@ public class Partie {
 		}
 	}
 
+	/**
+	 * Lance un niveau, les paramètres ont été préparés par les méthodes qui
+	 * appellent cette méthode.
+	 */
 	public static void lancerNiveau() {
 		if (gererNiveau != null)
 			gererNiveau.stop();
@@ -236,6 +393,11 @@ public class Partie {
 
 	}
 
+	/**
+	 * Méthode tick appelée toutes les X fois par secondes quand le jeu est en
+	 * mode temps réel, appèle la bonne méthode tick suivant les booléens de
+	 * {@link Partie}.
+	 */
 	public static void tick() {
 		if (!Coeur.graphique) {
 			GraphiqueConsole.afficher(gererNiveau.getNiveau());
@@ -258,6 +420,9 @@ public class Partie {
 
 	}
 
+	/**
+	 * Prépare la fenêtre à la fin d'un niveau.
+	 */
 	public static void preparerFenetre() {
 		Coeur.FENETRE.getContentPane().removeAll();
 		Coeur.FENETRE.getContentPane().setLayout(new BorderLayout());
@@ -266,6 +431,14 @@ public class Partie {
 		Coeur.FENETRE.getContentPane().validate();
 	}
 
+	/**
+	 * Enregistre le trajet passé en paramètre, le dossier ou on l'enregistre
+	 * est choisi e nfonctio ndes différents booleans de {@link Partie}.
+	 * 
+	 * @param trajet
+	 *            Le trajet à enregistrer.
+	 * @return Le chemin ou le fichier à été créé.
+	 */
 	public static String enregistrerEssai(String trajet) {
 		String essai = "Trajet : " + trajet + "\nScore : " + gererNiveau.getScore() + "     Diamants : "
 				+ gererNiveau.getNbDiamants() + "      Temps : ";

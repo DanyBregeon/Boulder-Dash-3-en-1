@@ -7,11 +7,11 @@ import java.util.Scanner;
 import main.Coeur;
 
 /**
- * La classe Menu contient le main ainsi que d'autres m�thodes statics g�rant la
- * lecture des param�tres du programme.
+ * La classe Menu contient le main ainsi que d'autres méthodes statics gérant la
+ * lecture des paramètres du programme.
  * 
- * Elle lance des m�thodes de la classe {@link SousMenu} en fonction des
- * param�tres entr�s.
+ * Elle lance des méthodes de la classe {@link SousMenu} en fonction des
+ * paramètres entrés.
  * 
  * @author Murloc
  *
@@ -19,9 +19,9 @@ import main.Coeur;
 public class Menu {
 
 	/**
-	 * La m�thode main.
+	 * La méthode main.
 	 * 
-	 * Elle lance d'autres m�thodes en fonction des param�tres.
+	 * Elle lance d'autres méthodes en fonction des paramètres.
 	 * 
 	 * @param args
 	 *            Les arguments
@@ -54,8 +54,8 @@ public class Menu {
 	}
 
 	/**
-	 * Cette m�thode est appel�e si l'utilisateur a rentr� l'argument "-lis",
-	 * elle teste si le nombre d'arguments entr�s est correct puis lance
+	 * Cette méthode est appelée si l'utilisateur a rentré l'argument "-lis",
+	 * elle teste si le nombre d'arguments entrés est correct puis lance
 	 * {@link SousMenu#lireInfos(String)} si oui.
 	 * 
 	 * @param args
@@ -70,12 +70,12 @@ public class Menu {
 	}
 
 	/**
-	 * Cette m�thode est appel�e si l'utilisateur a rentr� l'argument "-joue",
-	 * elle teste si le nombre d'arguments entr�s est correct puis lance
-	 * d'autres m�thodes si oui.
+	 * Cette méthode est appelée si l'utilisateur a rentré l'argument "-joue",
+	 * elle teste si le nombre d'arguments entrés est correct puis lance
+	 * d'autres méthodes si oui.
 	 * 
-	 * Lance la m�thode {@link Menu#options()} au d�but pour savoir si oui ou
-	 * non le joueur veut jouer en mode console/fen�tr�/temps r�el.
+	 * Lance la méthode {@link Menu#options()} au début pour savoir si oui ou
+	 * non le joueur veut jouer en mode console/fenêtré/temps réel.
 	 * 
 	 * @param args
 	 *            Les arguments.
@@ -100,12 +100,12 @@ public class Menu {
 	}
 
 	/**
-	 * Cette m�thode est appel�e si l'utilisateur a rentr� l'argument "-cal",
-	 * elle teste si le nombre d'arguments entr�s est correct puis lance
-	 * d'autres m�thodes si oui.
+	 * Cette méthode est appelée si l'utilisateur a rentré l'argument "-cal",
+	 * elle teste si le nombre d'arguments entrés est correct puis lance
+	 * d'autres méthodes si oui.
 	 * 
 	 * Elle lance {@link SousMenu#calculerStrategie(String, String, int)} si
-	 * l'ia voulue n'est pas �volutive ou
+	 * l'ia voulue n'est pas évolutive ou
 	 * {@link SousMenu#calculerStrategieEvol(String, int, String, int)} si elle
 	 * l'est.
 	 * 
@@ -142,9 +142,9 @@ public class Menu {
 	}
 
 	/**
-	 * Cette m�thode est appel�e si l'utilisateur a rentr� l'argument "-rejoue",
-	 * elle teste si le nombre d'arguments entr�s est correct puis lance
-	 * d'autres m�thodes si oui.
+	 * Cette méthode est appelée si l'utilisateur a rentré l'argument "-rejoue",
+	 * elle teste si le nombre d'arguments entrés est correct puis lance
+	 * d'autres méthodes si oui.
 	 * 
 	 * Puis elle lance {@link SousMenu#rejouerNiveau(String, String, int)} si
 	 * tout est ok.
@@ -172,9 +172,9 @@ public class Menu {
 	}
 
 	/**
-	 * Cette m�thode est appel�e si l'utilisateur a rentr� l'argument "-simul",
-	 * elle teste si le nombre d'arguments entr�s est correct puis lance
-	 * d'autres m�thodes si oui.
+	 * Cette méthode est appelée si l'utilisateur a rentré l'argument "-simul",
+	 * elle teste si le nombre d'arguments entrés est correct puis lance
+	 * d'autres méthodes si oui.
 	 * 
 	 * Si tout est ok elle lance
 	 * {@link SousMenu#simulerNiveau(int, String, String, String, int)}.
@@ -201,13 +201,13 @@ public class Menu {
 	}
 
 	/**
-	 * Cette m�thode est lanc�e en d�but de programme et demande au joueur
+	 * Cette méthode est lancée en début de programme et demande au joueur
 	 * diverses informations.
 	 * 
-	 * Elle change les booleans de {@link Coeur} en fonction des r�sultats.
+	 * Elle change les booleans de {@link Coeur} en fonction des résultats.
 	 * 
-	 * Elle fait apparaitre la fen�tre {@link Coeur#FENETRE} si l'utilisateur
-	 * joue en mode fen�tr�.
+	 * Elle fait apparaitre la fenétre {@link Coeur#FENETRE} si l'utilisateur
+	 * joue en mode fenétré.
 	 */
 	public static void options() {
 

@@ -11,14 +11,40 @@ import entitees.tickables.Diamant;
 import entitees.tickables.Pierre;
 import main.Partie;
 
+/**
+ * Cette classe représente les entitées Amibes.
+ * 
+ * @author celso
+ */
 public class Amibe extends Entitee {
 
+	/**
+	 * Constructeur qui prend les coordonnées.
+	 * 
+	 * @param x
+	 *            Coordonnée en x.
+	 * @param y
+	 *            Coordonnée en y.
+	 */
 	public Amibe(int x, int y) {
 		super(x, y);
 		setDestructible(true);
 		enumeration = Amibe;
 	}
 
+	/**
+	 * Méthode qui fait se propager les amibes.
+	 * 
+	 * Un appel = Une propagation.
+	 * 
+	 * Fais une liste de toutes les cases ou une amibe peut apparaitre.
+	 * 
+	 * Puis en choisis une aleatoirement.
+	 * 
+	 * Appelle {@link Amibe#checkDetruireAmibes()} à la fin.
+	 * 
+	 * @return Vrai si la propagation a été réussie, faux sinon.
+	 */
 	public boolean sePropager() {
 		List<Point> points = new ArrayList<Point>();
 		if (placeLibre(getX() + 1, getY())) {
@@ -46,6 +72,10 @@ public class Amibe extends Entitee {
 		}
 	}
 
+	/**
+	 * Regarde si il y a plus de 200 amibes dans la map, si oui les tramsforme
+	 * en pierre.
+	 */
 	private void checkDetruireAmibes() {
 		if (Partie.gererNiveau.getListeAmibes().size() >= 200) {
 			for (Amibe amibe : Partie.gererNiveau.getListeAmibes()) {
@@ -61,6 +91,9 @@ public class Amibe extends Entitee {
 		}
 	}
 
+	/**
+	 * Transforme toutes les amibes en diamant.
+	 */
 	public void transformerTousLesAmibesEnDiamant() {
 		for (Amibe amibe : Partie.gererNiveau.getListeAmibes()) {
 			Partie.gererNiveau.getNiveau().getMap()[amibe.getX()][amibe.getY()] = new Diamant(amibe.getX(),

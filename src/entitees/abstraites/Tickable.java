@@ -39,7 +39,7 @@ public abstract class Tickable extends Entitee implements Comparable<Tickable> {
 	private char direction;
 
 	/**
-	 * Les éléments de cette liste représentent quels types d'élément notre
+	 * Les éléments de cette liste représentent sur quels types d'élément notre
 	 * objet peut se déplacer.
 	 */
 	private List<Entitees> deplacementsPossibles = new ArrayList<Entitees>();
@@ -274,7 +274,7 @@ public abstract class Tickable extends Entitee implements Comparable<Tickable> {
 	 * 
 	 * Vrai si aucunes des 4 case autour sont inaccessibles, faux sinon.
 	 */
-	protected void bloquer() {
+	protected void testBloquer() {
 		bloque = !(placeLibre(getX() + 1, getY()) || placeLibre(getX(), getY() + 1) || placeLibre(getX(), getY() - 1)
 				|| placeLibre(getX() - 1, getY()));
 	}

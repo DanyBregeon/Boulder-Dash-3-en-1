@@ -4,8 +4,23 @@ import static entitees.abstraites.Entitee.Entitees.Luciole;
 
 import entitees.abstraites.Ennemi;
 
+/**
+ * Cette classe représente les entitées Lucioles.
+ * 
+ * @author celso
+ */
 public class Luciole extends Ennemi {
 
+	/**
+	 * Constructeur qui prend les coordonnées.
+	 * 
+	 * Ajoute les case de déplacement possibles pour cet objet.
+	 * 
+	 * @param x
+	 *            Coordonnée en x.
+	 * @param y
+	 *            Coordonnée en y.
+	 */
 	public Luciole(int x, int y) {
 		super(x, y);
 		setDestructible(true);
@@ -13,15 +28,9 @@ public class Luciole extends Ennemi {
 		enumeration = Luciole;
 	}
 
-	@Override
-	public void tick() {
-		if (!bloque) {
-			iASetDirection();
-			seDeplacer();
-		}
-		bloquer();
-	}
-
+	/**
+	 * Choisis une direction en fonction des cases autour.
+	 */
 	protected void iASetDirection() {
 		if (isFullLibre()) {
 			setDirection('g');

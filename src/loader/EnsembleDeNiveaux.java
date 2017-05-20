@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * La classe EnsembleDeNiveaux sert à enregistrer des ensembles d'objets
+ * La classe EnsembleDeNiveaux sert Ã  enregistrer des ensembles d'objets
  * {@link Niveau}.
  * 
  * @author Murloc
@@ -25,7 +25,7 @@ public class EnsembleDeNiveaux {
 	/**
 	 * Constructeur EnsembleDeNiveaux.
 	 * 
-	 * Prend en paramètre le nombre de niveaux que contiendra cet ensemble et
+	 * Prend en paramÃ¨tre le nombre de niveaux que contiendra cet ensemble et
 	 * initialise l'attribut.
 	 * 
 	 * @param nombre_de_niveaux
@@ -36,11 +36,11 @@ public class EnsembleDeNiveaux {
 	}
 
 	/**
-	 * Ajoute un niveau à l'ensemble de niveaux si la limite n'a pas été
+	 * Ajoute un niveau Ã  l'ensemble de niveaux si la limite n'a pas Ã©tÃ©
 	 * atteinte.
 	 * 
 	 * @param niveau
-	 *            Le niveau à ajouter.
+	 *            Le niveau Ã  ajouter.
 	 * @return Vrai si l'ajout a eu lieu, faux sinon.
 	 */
 	public boolean ajouterNiveau(Niveau niveau) {
