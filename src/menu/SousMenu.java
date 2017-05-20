@@ -2,6 +2,8 @@ package menu;
 
 import java.util.Scanner;
 
+import ia.IaDirectiveEvolue;
+import ia.IaEvolue;
 import loader.Loader;
 import main.Coeur;
 import main.Partie;
@@ -188,20 +190,22 @@ public class SousMenu {
 	 */
 	public static void finIA(Score s) {
 		if (!Partie.simulation) {
-
 			String fichier = Partie.enregistrerEssai(s.getChemin().substring(0, s.getParcours()));
 			char reponse = ' ';
-			do {
-				System.out.println("\nVoulez-vous observer le résultat ? (O/N)");
-				Scanner sc = new Scanner(System.in);
-				reponse = sc.nextLine().toUpperCase().charAt(0);
-			} while (reponse != 'O' && reponse != 'N');
-			if (reponse == 'O') {
-				Coeur.graphique = true;
-				Coeur.FENETRE.setVisible(true);
-				Coeur.tempsReel = true;
-				SousMenu.rejouerNiveau(fichier, Partie.cheminFichier, Partie.niveau);
+			if (Partie.ia instanceof IaDirectiveEvolue || Partie.ia instanceof IaEvolue) {
+				do {
+					System.out.println("\nVoulez-vous observer le résultat ? (O/N)");
+					Scanner sc = new Scanner(System.in);
+					reponse = sc.nextLine().toUpperCase().charAt(0);
+				} while (reponse != 'O' && reponse != 'N');
+				if (reponse == 'O') {
+					Coeur.graphique = true;
+					Coeur.FENETRE.setVisible(true);
+					Coeur.tempsReel = true;
+					SousMenu.rejouerNiveau(fichier, Partie.cheminFichier, Partie.niveau);
+				}
 			}
+
 		}
 	}
 }

@@ -179,4 +179,14 @@ public class Score implements Comparable<Score> {
 		this.chemin = chemin;
 	}
 
+	/**
+	 * Un setter.
+	 * 
+	 * @param parcours
+	 *            L'objet en question.
+	 */
+	public void setParcours(int parcours) {
+		this.parcours = parcours;
+	}
+
 }

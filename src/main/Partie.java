@@ -264,7 +264,7 @@ public class Partie {
 		}
 
 		Score score = new Score(gererNiveau.getScore(), gererNiveau.getCompteurTicks(), gererNiveau.getListeDiamants());
-
+		score.setParcours(gererNiveau.getTrajet());
 		SousMenu.finIA(score);
 		return score;
 	}
@@ -460,4 +460,9 @@ public class Partie {
 		outils.Ecrivain.ecrire(essai, "Niveau_" + niveau + ".dash", chemin);
 		return chemin + "Niveau_" + niveau + ".dash";
 	}
+
+	public static String getParcours() {
+		return parcours;
+	}
+	
 }
