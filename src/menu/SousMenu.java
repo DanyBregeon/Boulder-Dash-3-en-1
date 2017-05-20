@@ -199,6 +199,8 @@ public class SousMenu {
 					reponse = sc.nextLine().toUpperCase().charAt(0);
 				} while (reponse != 'O' && reponse != 'N');
 				if (reponse == 'O') {
+					Partie.IA=false;
+					Partie.lecture=true;
 					Coeur.graphique = true;
 					Coeur.FENETRE.setVisible(true);
 					Coeur.tempsReel = true;
