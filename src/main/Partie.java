@@ -265,6 +265,7 @@ public class Partie {
 
 		Score score = new Score(gererNiveau.getScore(), gererNiveau.getCompteurTicks(), gererNiveau.getListeDiamants());
 		score.setChemin(gererNiveau.getTrajet());
+		score.setParcours(score.getChemin().length());
 		SousMenu.finIA(score);
 		return score;
 	}
