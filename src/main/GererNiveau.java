@@ -24,11 +24,11 @@ public class GererNiveau {
     /**
      * Compteur de reset, inutile dans cette version.
      */
-    private static long compteurReset = 0;
+    private static long    compteurReset = 0;
     /**
      * Boolean qui définit si le jeu est en tour par tour.
      */
-    private boolean tourParTour = true;
+    private        boolean tourParTour   = true;
     ;
     /**
      * Booleans qui définissent si on doit arreter ou reset le niveau.
@@ -49,11 +49,11 @@ public class GererNiveau {
     /**
      * Stocke la touche que le joueur a appuyé durant le tick actuel.
      */
-    private char toucheClavier;
+    private char   toucheClavier;
     /**
      * String qui stock le trajet qu'a emprunté Rockford depuis le début.
      */
-    private String trajet = "";
+    private String      trajet      = "";
     /**
      * Stock toutes les amibes du niveau.
      */

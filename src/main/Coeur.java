@@ -32,24 +32,24 @@ public class Coeur {
     /**
      * Le controleur console servant si le jeu n'est pas en mode graphique.
      */
-    public static final ControleurConsole CONTROLEUR_CONSOLE = new ControleurConsole();
+    public static final ControleurConsole        CONTROLEUR_CONSOLE = new ControleurConsole();
     /**
      * L'objet permettant d'effectuer des frames de jeu à un rythme régulier
      * dans un thread quand le jeu est en mode graphique.
      */
-    public static final ScheduledExecutorService FRAME_TASK = Executors.newScheduledThreadPool(1);
+    public static final ScheduledExecutorService FRAME_TASK         = Executors.newScheduledThreadPool(1);
     /**
      * L'objet permettant de réaliser des tours de jeu à un rythme régulier dans
      * un thread quand le jeu est en mode temps réel.
      */
-    public static ScheduledExecutorService tickTask = Executors.newScheduledThreadPool(1);
+    public static       ScheduledExecutorService tickTask           = Executors.newScheduledThreadPool(1);
     /**
      * Booléan définissant si une partie est en train d'avoir lieu ou pas.
      * Si le joueur est en train de jouer il est vrai.
      * Si le programme calcule une stratégie ou alors qu'il est en train
      * d'effectuer un changement de niveau il est en faux.
      */
-    public static boolean running = false;
+    public static       boolean                  running            = false;
 
     /**
      * Booléan définissant si une partie est en mode temps graphique ou console.

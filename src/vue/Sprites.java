@@ -119,35 +119,35 @@ public class Sprites {
      *
      * @see EnsembleDeSprites
      */
-    public static final EnsembleDeSprites SPRITES_ANIMES = new EnsembleDeSprites();
+    public static final EnsembleDeSprites SPRITES_ANIMES             = new EnsembleDeSprites();
     /**
      * Entier représentant la vitesse d'animation des amibes.
      */
-    public static final int VITESSE_ANIM_AMIBES = 20;
+    public static final int               VITESSE_ANIM_AMIBES        = 20;
     /**
      * Entier représentant la vitesse d'animation des lucioles.
      */
-    public static final int VITESSE_ANIM_LUCIOLES = 10;
+    public static final int               VITESSE_ANIM_LUCIOLES      = 10;
     /**
      * Entier représentant la vitesse d'animation de Rockford.
      */
-    public static final int VITESSE_ANIM_ROCKFORD = 5;
+    public static final int               VITESSE_ANIM_ROCKFORD      = 5;
     /**
      * Entier représentant la vitesse d'animation des libellules.
      */
-    public static final int VITESSE_ANIM_LIBELLULES = 10;
+    public static final int               VITESSE_ANIM_LIBELLULES    = 10;
     /**
      * Entier représentant la vitesse d'animation des diamants.
      */
-    public static final int VITESSE_ANIM_DIAMANTS = 30;
+    public static final int               VITESSE_ANIM_DIAMANTS      = 30;
     /**
      * Entier représentant la vitesse d'animation des murs magiques.
      */
-    public static final int VITESSE_ANIM_MURS_MAGIQUES = 30;
+    public static final int               VITESSE_ANIM_MURS_MAGIQUES = 30;
     /**
      * Entier représentant la vitesse d'animation des explosions.
      */
-    public static final int VITESSE_ANIM_EXPLOSIONS = 15;
+    public static final int               VITESSE_ANIM_EXPLOSIONS    = 15;
     /**
      * Image contenant l'image actuelle de Rockford.
      */

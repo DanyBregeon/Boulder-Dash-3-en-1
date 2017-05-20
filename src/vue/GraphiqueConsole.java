@@ -46,7 +46,7 @@ public class GraphiqueConsole {
         }
 
 		/*
-		 * Concatène diverses informations.
+         * Concatène diverses informations.
 		 */
         s += ("Diamants : " + Partie.gererNiveau.getNbDiamants() + "/"
               + Partie.gererNiveau.getNiveau().getDiamonds_required() + "\n");

@@ -142,7 +142,7 @@ public class JeuPanel extends JPanel {
             return Sprites.SPRITES_EXPLOSIONS.get(0);
         } else if (classe.equals(Bombe.class)) {
             /*
-			 * Algo permettant le clignotement de la bombe avant l'explosion,
+             * Algo permettant le clignotement de la bombe avant l'explosion,
 			 * renvoie une image de la bombe noire ou celle de la bombe rouge
 			 * (suivant l'évolution du compteur de FPS), pour créer l'illusion
 			 * du clignotement.

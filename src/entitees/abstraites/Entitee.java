@@ -29,11 +29,11 @@ public abstract class Entitee implements Cloneable {
     /**
      * Id static permettant de mettre un identifiant différent à chaque entitée.
      */
-    public static long idTotal = 0;
+    public static long       idTotal = 0;
     /**
      * Outil permettant de jouer des sons.
      */
-    protected SonToolKit sons = new SonToolKit();
+    protected     SonToolKit sons    = new SonToolKit();
 
     /**
      * Enumeration propre à l'entit�e.
