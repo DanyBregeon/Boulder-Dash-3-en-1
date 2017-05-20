@@ -68,6 +68,7 @@ public class SousMenu {
 	public static void calculerStrategie(String strategie, String cheminFichierBDCFF, int niveau) {
 		System.out.println("Calcul en cours...\n");
 		Partie.calculerStrategie(strategie, cheminFichierBDCFF, niveau);
+		System.exit(1);
 	}
 
 	/**

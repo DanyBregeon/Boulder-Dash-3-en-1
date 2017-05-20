@@ -259,15 +259,14 @@ public class Partie {
 		}
 
 		if (ia != null) {
-			while (!gererNiveau.tickIa(ia))
-				;
+			gererNiveau.tickIa(ia);
 		}
-
 		Score score = new Score(gererNiveau.getScore(), gererNiveau.getCompteurTicks(), gererNiveau.getListeDiamants());
 		score.setChemin(gererNiveau.getTrajet());
 		score.setParcours(score.getChemin().length());
 		SousMenu.finIA(score);
 		return score;
+	
 	}
 
 	/**
@@ -465,5 +464,5 @@ public class Partie {
 	public static String getParcours() {
 		return parcours;
 	}
-	
+
 }
