@@ -257,13 +257,13 @@ public class Partie {
 		} else if (strategie.equals("-directif")) {
 			ia = new IaDirective();
 		}
-
 		if (ia != null) {
-			gererNiveau.tickIa(ia);
+			 ok=gererNiveau.tickIa(ia);
 		}
 		Score score = new Score(gererNiveau.getScore(), gererNiveau.getCompteurTicks(), gererNiveau.getListeDiamants());
 		score.setChemin(gererNiveau.getTrajet());
 		score.setParcours(score.getChemin().length());
+		if(!(Partie.ia instanceof IaRandom)
 		SousMenu.finIA(score);
 		return score;
 	
