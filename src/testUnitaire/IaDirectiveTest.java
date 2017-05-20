@@ -16,7 +16,7 @@ public class IaDirectiveTest extends TestCase{
 	private static IaDirective ia;
 	
 	public static void setUpBeforeClass() {
-		Partie.ensembleDeNiveau = Loader.charger_ensemble_de_niveaux("niveau.txt");
+		Partie.ensembleDeNiveau = Loader.charger_ensemble_de_niveaux("niveau.bdcff");
 		Partie.niveau = 1;
 		Partie.gererNiveau = new GererNiveau(Partie.ensembleDeNiveau.getNiveaux().get(Partie.niveau - 1).clone());
 		Partie.ia = new IaDirective();

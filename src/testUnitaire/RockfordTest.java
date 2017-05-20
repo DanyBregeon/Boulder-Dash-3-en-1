@@ -15,7 +15,7 @@ public class RockfordTest extends TestCase{
 	private static Rockford rockford;
 	
 	public static void setUpBeforeClass() {
-		Partie.ensembleDeNiveau = Loader.charger_ensemble_de_niveaux("niveau.txt");
+		Partie.ensembleDeNiveau = Loader.charger_ensemble_de_niveaux("niveau.bdcff");
 		Partie.niveau = 1;
 		Partie.gererNiveau = new GererNiveau(Partie.ensembleDeNiveau.getNiveaux().get(Partie.niveau - 1).clone());
 		rockford = Partie.gererNiveau.getNiveau().getRockford();
