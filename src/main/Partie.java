@@ -258,12 +258,12 @@ public class Partie {
 			ia = new IaDirective();
 		}
 		if (ia != null) {
-			 ok=gererNiveau.tickIa(ia);
+			 gererNiveau.tickIa(ia);
 		}
 		Score score = new Score(gererNiveau.getScore(), gererNiveau.getCompteurTicks(), gererNiveau.getListeDiamants());
 		score.setChemin(gererNiveau.getTrajet());
 		score.setParcours(score.getChemin().length());
-		if(!(Partie.ia instanceof IaRandom)
+		if(!(Partie.ia instanceof IaRandom))
 		SousMenu.finIA(score);
 		return score;
 	
