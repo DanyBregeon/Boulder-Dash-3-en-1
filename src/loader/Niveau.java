@@ -286,9 +286,10 @@ public class Niveau implements Cloneable {
 	}
 
 	/**
-	 * Un getter.
+	 * Un setter.
 	 * 
-	 * @return L'objet en question.
+	 * @param cave_time
+	 *            L'objet en question.
 	 */
 	public void setCave_time(int cave_time) {
 		this.cave_time = cave_time;

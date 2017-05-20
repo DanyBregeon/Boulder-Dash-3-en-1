@@ -22,7 +22,7 @@ import outils.Paire;
  * La classe Sprites n'est jamais instanciée, c'est une classe base de données
  * contenant les images des éléments du jeu.
  * 
- * La méthode {@link chargerSprites} est appelée de manière static au début du
+ * La méthode {@link Sprites#chargerSprites} est appelée de manière static au début du
  * programme, elle va charger toutes les images dans la map
  * {@link Sprites#CHARGEMENT_SPRITES}.
  * 

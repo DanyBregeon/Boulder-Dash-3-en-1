@@ -12,17 +12,59 @@ import main.GererNiveau;
 import main.Partie;
 import outils.Score;
 
+/**
+ * Classe représentant l'ia évoluée directive..
+ * 
+ * @author celso
+ *
+ */
 public class IaDirectiveEvolue extends Ia {
 
+	/**
+	 * Une liste de score représentant les scores obenus durant cette
+	 * génération.
+	 */
 	private List<Score> liste = new ArrayList<>();
+	/**
+	 * Le score actuel.
+	 */
 	private Score scoreActuel;
+	/**
+	 * Le nombre de génération à effectuer.
+	 */
 	private int nbGenerations;
+	/**
+	 * La génération nactuelle.
+	 */
 	private int generationActuelle = 1;
+	/**
+	 * Le nomrbe d'essais par génération.
+	 */
 	private int trysDeGeneration = NOMBRE_DE_TRY_GENERATION;
+	/**
+	 * Une liste de score représentant les scores obenus durant la dernière
+	 * génération.
+	 */
 	private List<Score> liste2 = new ArrayList<>();
+	/**
+	 * La taille maximale du chemin que peut prendre Rockford.
+	 */
 	private double tailleCheminMaximale;
+
+	/**
+	 * Le nombre de diamants à récupérer.
+	 */
 	private int nbObjectifs;
 
+	/**
+	 * Constructeur IaDirectiveEvolue.
+	 * 
+	 * Le initialise les attributs et effectue la première génération (full
+	 * random).
+	 * 
+	 * @param nbGenerations
+	 *            Le nombre de générations à effectuer.
+	 */
 	public IaDirectiveEvolue(int nbGenerations) {
 		this.nbGenerations = nbGenerations;
 		String chemin;
@@ -74,6 +116,12 @@ public class IaDirectiveEvolue extends Ia {
 		}
 	}
 
+	/**
+	 * Appelée après la première génération, effectue le nombre de générations
+	 * nécessaires et renvoie le meilleur score obtenu.
+	 * 
+	 * @return Le meilleur score obtenu.
+	 */
 	public Score debut() {
 		Score aReturn;
 		while (!critereArret()) {
@@ -159,6 +207,14 @@ public class IaDirectiveEvolue extends Ia {
 		return aReturn;
 	}
 
+	/**
+	 * Renvoit vrai quand le nombre de générations dépasses le nombre de
+	 * générations voulues.
+	 * 
+	 * Sert à indiquer à l'IA quand s'arréter.
+	 * 
+	 * @return Retourne vrai si 'il doit s'arrêter.
+	 */
 	public boolean critereArret() {
 		if (generationActuelle > nbGenerations) {
 			return true;
@@ -167,6 +223,10 @@ public class IaDirectiveEvolue extends Ia {
 		}
 	}
 
+	/**
+	 * Crée un objet Score avec les valeurs actuelles que l'ia a, et l'ajotue
+	 * dans la liste des scores.
+	 */
 	public void ajouterScore() {
 		scoreActuel = new Score(Partie.gererNiveau.getScore(), Partie.gererNiveau.getTrajet().length(),
 				Partie.gererNiveau.getListeDiamants());
@@ -175,14 +235,29 @@ public class IaDirectiveEvolue extends Ia {
 		Collections.sort(liste);
 	}
 
+	/**
+	 * Un getter.
+	 * 
+	 * @return l'objet en question.
+	 */
 	public int getNbGenerations() {
 		return nbGenerations;
 	}
 
+	/**
+	 * Un getter.
+	 * 
+	 * @return l'objet en question.
+	 */
 	public int getGenerationActuelle() {
 		return generationActuelle;
 	}
 
+	/**
+	 * Un getter.
+	 * 
+	 * @return l'objet en question.
+	 */
 	public int getNbObjectifs() {
 		return nbObjectifs;
 	}

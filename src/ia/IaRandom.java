@@ -3,6 +3,8 @@ package ia;
 import entitees.abstraites.Entitee;
 
 /**
+ * Classe représentant les IA random.
+ * 
  * Created by celso on 28/04/17.
  */
 public class IaRandom extends Ia {
@@ -24,7 +26,6 @@ public class IaRandom extends Ia {
 			return 'a';
 		}
 	}
-
 
 	@Override
 	public void initialiserTry() {

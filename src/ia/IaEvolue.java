@@ -9,20 +9,67 @@ import java.util.List;
 import entitees.abstraites.Entitee;
 import main.Constantes;
 import main.Partie;
-import outils.Paire;
 import outils.Score;
 
+/**
+ * Classe représentant l'ia évoluée.
+ * 
+ * @author celso
+ *
+ */
 public class IaEvolue extends Ia {
 
+	/**
+	 * Une liste de score représentant les scores obenus durant cette
+	 * génération.
+	 */
 	private List<Score> liste = new ArrayList<>();
+
+	/**
+	 * Le score actuel.
+	 */
 	private Score scoreActuel;
+
+	/**
+	 * Le nombre de génération à effectuer.
+	 */
 	private int nbGenerations;
+
+	/**
+	 * La génération nactuelle.
+	 */
 	private int generationActuelle = 1;
+
+	/**
+	 * Le nombre d'essais par génération.
+	 */
 	private int trysDeGeneration = NOMBRE_DE_TRY_GENERATION;
+
+	/**
+	 * Une liste de score représentant les scores obenus durant la dernière
+	 * génération.
+	 */
 	private List<Score> liste2 = new ArrayList<>();
+
+	/**
+	 * La taille maximale du chemin que peut prendre Rockford.
+	 */
 	private double tailleCheminMaximale;
+
+	/**
+	 * Le nombre de diamants à récupérer.
+	 */
 	private int nbObjectifs;
 
+	/**
+	 * Constructeur IaEvolue.
+	 * 
+	 * Le initialise les attributs et effectue la première génération (full
+	 * random).
+	 * 
+	 * @param nbGenerations
+	 *            Le nombre de générations à effectuer.
+	 */
 	public IaEvolue(int nbGenerations) {
 		this.nbGenerations = nbGenerations;
 		this.nbObjectifs = Partie.gererNiveau.getNiveau().getDiamonds_required() + 1;
@@ -64,6 +111,12 @@ public class IaEvolue extends Ia {
 		}
 	}
 
+	/**
+	 * Appelée après la première génération, effectue le nombre de générations
+	 * nécessaires et renvoie le meilleur score obtenu.
+	 * 
+	 * @return Le meilleur score obtenu.
+	 */
 	public Score debut() {
 		Score aReturn;
 		while (!critereArret()) {
@@ -117,6 +170,14 @@ public class IaEvolue extends Ia {
 		return aReturn;
 	}
 
+	/**
+	 * Renvoit vrai quand le nombre de générations dépasses le nombre de
+	 * générations voulues.
+	 * 
+	 * Sert à indiquer à l'IA quand s'arréter.
+	 * 
+	 * @return Vrai si l'IA doit s'arrêter.
+	 */
 	public boolean critereArret() {
 		if (generationActuelle > nbGenerations) {
 			return true;
@@ -125,6 +186,12 @@ public class IaEvolue extends Ia {
 		}
 	}
 
+	/**
+	 * Crée un objet Score avec les valeurs actuelles que l'ia a, et l'ajotue
+	 * dans la liste des scores.
+	 * 
+	 * @return Le score obtenu.
+	 */
 	public Score ajouterScore() {
 		scoreActuel = new Score(Partie.gererNiveau.getScore(), Partie.gererNiveau.getTrajet().length(),
 				Partie.gererNiveau.getListeDiamants());
@@ -134,6 +201,14 @@ public class IaEvolue extends Ia {
 		return scoreActuel;
 	}
 
+	/**
+	 * Ajoute l'objet Score en paramètre, et l'ajotue dans la liste des scores.
+	 * 
+	 * @param s
+	 *            Le score à ajouter.
+	 * 
+	 * @return Le score obtenu.
+	 */
 	public Score ajouterScore(Score s) {
 		scoreActuel = s;
 		scoreActuel.setChemin(Partie.parcours);
@@ -142,14 +217,29 @@ public class IaEvolue extends Ia {
 		return scoreActuel;
 	}
 
+	/**
+	 * Un getter.
+	 * 
+	 * @return l'objet en question.
+	 */
 	public int getNbGenerations() {
 		return nbGenerations;
 	}
 
+	/**
+	 * Un getter.
+	 * 
+	 * @return l'objet en question.
+	 */
 	public int getGenerationActuelle() {
 		return generationActuelle;
 	}
 
+	/**
+	 * Un getter.
+	 * 
+	 * @return l'objet en question.
+	 */
 	public int getNbObjectifs() {
 		return nbObjectifs;
 	}

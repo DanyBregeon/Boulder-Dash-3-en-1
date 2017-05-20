@@ -14,12 +14,39 @@ import loader.Niveau;
 import main.Partie;
 import outils.Noeud;
 
+/**
+ * Classe représentant l'ia directive.
+ * 
+ * @author celso
+ *
+ */
 public class IaDirective extends Ia {
 
+	/**
+	 * Le graphe du niveau actuel.
+	 */
 	private Noeud[][] graphe;
+
+	/**
+	 * Le chemin que l'ia va prendre.
+	 */
 	private Stack<Noeud> chemin;
+
+	/**
+	 * Booleen servant à indiquer si Rockford est bloqué.
+	 */
 	private boolean bloquer = false;
 
+	/**
+	 * Renvoit un noeud indiquant le diamant e plus proche par rapport à un
+	 * noeud de départ.
+	 * 
+	 * Renvoie null s'il n'existe aucun diaant dans ce niveau.
+	 * 
+	 * @param depart
+	 *            Le noeud de départ.
+	 * @return Le noeud indiquant le diamant le plus proche.
+	 */
 	private Noeud diamantLePlusProche(Noeud depart) {
 		LinkedList<Noeud> file = new LinkedList<Noeud>();
 		file.add(depart);
@@ -43,10 +70,13 @@ public class IaDirective extends Ia {
 	}
 
 	/**
+	 * Calcule le chemin le plus court entre deux noeuds.
 	 * 
 	 * @param depart
+	 *            Le Noeud de départ.
 	 * @param objectif
-	 * @return
+	 *            Le Noeud objectif.
+	 * @return Le chemin le plus court.
 	 */
 	private Stack<Noeud> cheminPlusCourt(Noeud depart, Noeud objectif) {
 		List<Noeud> closedList = new LinkedList<Noeud>();
