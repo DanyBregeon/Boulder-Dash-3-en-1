@@ -144,7 +144,7 @@ public class Partie {
 	 * chemin est en paramètre, en mode lecture, c'est à dire que l'ia va jouer
 	 * le parcour en paramètre.
 	 * 
-	 * @param chemin
+	 * @param cheminFichierBDCFF
 	 *            Chemin du fichier BDCFF.
 	 * @param niveau
 	 *            Niveau choisi.

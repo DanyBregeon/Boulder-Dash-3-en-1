@@ -6,41 +6,41 @@ import main.Partie;
 import vue.Fenetre;
 
 /**
- * La classe FrameTask est une classe utilis�e par l'objet
+ * La classe FrameTask est une classe utilisée par l'objet
  * {@link Coeur#FRAME_TASK} afin d'effectuer les frames de jeu automatiquement
- * quand celui-ci est en temps r�el.
+ * quand celui-ci est en temps réel.
  * 
- * Elle dispose de plusieurs atributs qui servent � compter le nombre de frames
- * par secondes en temps r�el.
+ * Elle dispose de plusieurs atributs qui servent à compter le nombre de frames
+ * par secondes en temps réel.
  * 
  * @author Murloc
  *
  */
 public class FrameTask implements Runnable {
 	/**
-	 * Un compteur qui sert � compter le nombre de ticks (tours) par secondes en
-	 * temps r�el.
+	 * Un compteur qui sert à compter le nombre de ticks (tours) par secondes en
+	 * temps réel.
 	 */
 	public static double compteur1 = 0;
 
 	/**
-	 * Un compteur qui sert � compter le nombre de ticks (tours) par secondes en
-	 * temps r�el.
+	 * Un compteur qui sert à compter le nombre de ticks (tours) par secondes en
+	 * temps réel.
 	 */
 	public static double compteur2 = System.nanoTime();
 
 	/**
-	 * Un compteur qui sert � compter le nombre de ticks (tours) par secondes en
-	 * temps r�el.
+	 * Un compteur qui sert à compter le nombre de ticks (tours) par secondes en
+	 * temps réel.
 	 */
 	public static int compteur3 = 0;
 
 	/**
-	 * La m�thode que l'objet {@link Coeur#FRAME_TASK} appelle un certain nombre
+	 * La méthode que l'objet {@link Coeur#FRAME_TASK} appelle un certain nombre
 	 * de fois par secondes.
 	 * 
 	 * Elle effectue un {@link Fenetre#repaint()} si le booleen
-	 * {@link Coeur#running} est vrai, que le jeu est en mode temps r�el et en
+	 * {@link Coeur#running} est vrai, que le jeu est en mode temps réel et en
 	 * mode graphique.
 	 * 
 	 */

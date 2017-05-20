@@ -29,7 +29,7 @@ public class Sortie extends Entitee {
 	 * Retourne vrai si le nombre de diamant attrapé par le joueur est supérieur
 	 * ou égal au nombre de diamant requis dans ce niveau.
 	 * 
-	 * @return
+	 * @return Retourne vrai si c'est le cas, faux sinon.
 	 */
 	public boolean isOuvert() {
 		return Partie.gererNiveau.getNbDiamants() >= Partie.gererNiveau.getNiveau().getDiamonds_required();

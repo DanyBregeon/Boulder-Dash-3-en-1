@@ -10,10 +10,10 @@ import main.Coeur;
 import main.Partie;
 
 /**
- * La classe ScorePanel hérite de JPanel et sert à afficher la barre contenant
- * les informations de jeu en haut de la fenêtre.
+ * La classe ScorePanel hÃ©rite de JPanel et sert Ã  afficher la barre contenant
+ * les informations de jeu en haut de la fenÃªtre.
  * 
- * Est utilisée seulement quand le jeu est en mode fenêtré.
+ * Est utilisÃ©e seulement quand le jeu est en mode fenÃªtrÃ©.
  * 
  * @see JPanel
  * 
@@ -25,7 +25,7 @@ public class ScorePanel extends JPanel {
 	/**
 	 * Constructeur ScorePanel.
 	 * 
-	 * Initialise les dimensions en se basant sur les dimensions de la fenêtre
+	 * Initialise les dimensions en se basant sur les dimensions de la fenÃªtre
 	 * {@link main.Coeur#FENETRE}.
 	 */
 	public ScorePanel() {
@@ -33,9 +33,9 @@ public class ScorePanel extends JPanel {
 	}
 
 	/**
-	 * La methode servant a écrire les informations.
+	 * La methode servant a Ã©crire les informations.
 	 * 
-	 * Appellée par la fenêtre à chaque {@link vue.Fenetre#repaint()}.
+	 * AppellÃ©e par la fenÃªtre Ã  chaque {@link vue.Fenetre#repaint()}.
 	 * 
 	 * Elle se sert des informations de {@link main.Partie#gererNiveau}.
 	 */
@@ -45,7 +45,7 @@ public class ScorePanel extends JPanel {
 		g.fillRect(0, 0, getWidth(), getHeight());
 
 		// Dessine des traits blancs en se basant sur la taille du panel servant
-		// à délimiter les informations.
+		// Ã  dÃ©limiter les informations.
 		g.setColor(Color.white);
 		for (int i = 1; i <= 5; i++) {
 			g.drawLine(getWidth() * i / 5, 0, getWidth() * i / 5, getHeight());

@@ -1,22 +1,22 @@
 package vue;
 
+import static main.Coeur.CONTROLEUR;
+import static main.Constantes.HEIGHT_FENETRE;
+import static main.Constantes.WIDTH_FENETRE;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
 
-import main.Coeur;
 import main.Constantes;
 
-import static main.Coeur.CONTROLEUR;
-import static main.Constantes.*;
-
 /**
- * La classe Fen�tre h�rite de JFrame et sert � g�rer la fen�tre du mode
+ * La classe Fenétre hérite de JFrame et sert à gérer la fenètre du mode
  * graphique du jeu.
  * 
- * Elle impl�mente la classe {@link KeyListener} afin de pouvoir r�cup�rer les
- * entr�es clavier.
+ * Elle implémente la classe {@link KeyListener} afin de pouvoir récupérer les
+ * entrées clavier.
  * 
  * @see JFrame
  * 
@@ -38,7 +38,7 @@ public class Fenetre extends JFrame implements KeyListener {
 	/**
 	 * Constructeur Fenetre.
 	 * 
-	 * Elle ne prend pas de param�tres mais trouve les diff�rentes variables
+	 * Elle ne prend pas de paramètres mais trouve les différentes variables
 	 * dans la classe {@link main.Constantes}.
 	 */
 	public Fenetre() {
@@ -52,14 +52,10 @@ public class Fenetre extends JFrame implements KeyListener {
 	}
 
 	/**
-	 * M�thode servant � rafraichir le titre de la fen�tre afin d'y inscrire le
+	 * Méthode servant à rafraichir le titre de la fenètre afin d'y inscrire le
 	 * nombre de frames par secondes et/ou le nombre de ticks par secondes en
 	 * foncion des booleens de la classe {@link main.Constantes}.
 	 * 
-	 * @param fps
-	 *            Le nombre de FPS.
-	 * @param tps
-	 *            Le nombre de TPS.
 	 */
 	public void setTitre() {
 
@@ -73,8 +69,8 @@ public class Fenetre extends JFrame implements KeyListener {
 	}
 
 	/**
-	 * M�thode impl�ment�e par l'interface {@link KeyListener} appel�e quand une
-	 * touche vient d'�tre tap�e. Ne fais rien car
+	 * Méthode implémentée par l'interface {@link KeyListener} appelée quand une
+	 * touche vient d'être tapée. Ne fais rien car
 	 * {@link Fenetre#keyPressed(KeyEvent)} suffit.
 	 */
 	@Override
@@ -82,8 +78,8 @@ public class Fenetre extends JFrame implements KeyListener {
 	}
 
 	/**
-	 * M�thode impl�ment�e par l'interface {@link KeyListener} appel�e quand une
-	 * touche vient d'�tre enfonc�e.
+	 * Méthode implémentée par l'interface {@link KeyListener} appelée quand une
+	 * touche vient d'être enfoncée.
 	 */
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -91,8 +87,8 @@ public class Fenetre extends JFrame implements KeyListener {
 	}
 
 	/**
-	 * M�thode impl�ment�e par l'interface {@link KeyListener} appel�e quand une
-	 * touche vient d'�tre rel�ch�e.
+	 * Méthode implémentée par l'interface {@link KeyListener} appelée quand une
+	 * touche vient d'être relâchée.
 	 */
 	@Override
 	public void keyReleased(KeyEvent e) {

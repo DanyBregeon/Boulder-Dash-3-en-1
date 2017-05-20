@@ -8,8 +8,8 @@ import javax.swing.JPanel;
 import main.Partie;
 
 /**
- * La classe FinPanel hérite de JPanel et sert à afficher l'écran de fin de jeu
- * quand celui-ci est en mode fenêtré.
+ * La classe FinPanel hÃ©rite de JPanel et sert Ã  afficher l'Ã©cran de fin de jeu
+ * quand celui-ci est en mode fenÃªtrÃ©.
  * 
  * @see JPanel
  * 
@@ -18,16 +18,16 @@ import main.Partie;
 public class FinPanel extends JPanel {
 
 	/**
-	 * La méthode servant à dessiner l'écran de fin de jeu.
+	 * La mÃ©thode servant Ã  dessiner l'ï¿½cran de fin de jeu.
 	 * 
 	 * Elle se sert du boolean {@link main.Partie#tousLesNiveaux} pour savoir si
 	 * le joueur viens d'effectuer un ou plusieurs niveaux.
 	 * 
-	 * Si le joueur a effectué plusieurs niveaux elle se sert de la liste
-	 * d'entiers {@link main.Partie#SCORES} pour connaitre les scores à
+	 * Si le joueur a effectuÃ© plusieurs niveaux elle se sert de la liste
+	 * d'entiers {@link main.Partie#SCORES} pour connaitre les scores Ã 
 	 * afficher.
 	 * 
-	 * Sinon se sert de {@link main.Partie#gererNiveau} pour récuperer dans ses
+	 * Sinon se sert de {@link main.Partie#gererNiveau} pour rÃ©cuperer dans ses
 	 * attributs le score du niveau actuel, qui est donc celui que le joueur
 	 * vient de faire.
 	 */
@@ -38,7 +38,7 @@ public class FinPanel extends JPanel {
 
 		g.setColor(Color.white);
 
-		// Si le joueur a effectué plusieurs niveaux.
+		// Si le joueur a effectuÃ© plusieurs niveaux.
 		if (Partie.tousLesNiveaux) {
 			// Dessine les scores dans l'ordre.
 			int compteur = 1;

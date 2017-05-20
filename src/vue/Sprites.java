@@ -19,10 +19,10 @@ import outils.EnsembleDeSprites;
 import outils.Paire;
 
 /**
- * La classe Sprites n'est jamais instanciée, c'est une classe base de données
- * contenant les images des éléments du jeu.
+ * La classe Sprites n'est jamais instanciÃ©e, c'est une classe base de donnÃ©es
+ * contenant les images des Ã©lÃ©ments du jeu.
  * 
- * La méthode {@link chargerSprites} est appelée de manière static au début du
+ * La mÃ©thode {@link chargerSprites} est appelÃ©e de maniÃ¨re static au dÃ©but du
  * programme, elle va charger toutes les images dans la map
  * {@link Sprites#CHARGEMENT_SPRITES}.
  * 
@@ -31,7 +31,7 @@ import outils.Paire;
 public class Sprites {
 	/**
 	 * Contient tous les sprites en valeur et le nom du fichier du sprite en
-	 * clé.
+	 * clÃ©.
 	 */
 	public static final Map<String, Image> CHARGEMENT_SPRITES = new HashMap<String, Image>();
 
@@ -81,7 +81,7 @@ public class Sprites {
 	public static final List<Image> SPRITES_PIERRES = new ArrayList<Image>();
 
 	/**
-	 * Liste des sprites de la poussière.
+	 * Liste des sprites de la poussiÃ¨re.
 	 */
 	public static final List<Image> SPRITES_POUSSIERES = new ArrayList<Image>();
 
@@ -101,7 +101,7 @@ public class Sprites {
 	public static final List<Image> SPRITES_ROCKFORD_GAUCHE = new ArrayList<Image>();
 
 	/**
-	 * Liste des sprites de Rockford quand il est camouflé.
+	 * Liste des sprites de Rockford quand il est camouflÃ©.
 	 */
 	public static final List<Image> SPRITES_CAMOUFLAGE = new ArrayList<Image>();
 
@@ -116,7 +116,7 @@ public class Sprites {
 	public static final List<Image> SPRITES_BOMBE = new ArrayList<Image>();
 
 	/**
-	 * Objet permettant de gérer quel sprites doivent s'afficher à quelle frame.
+	 * Objet permettant de gÃ©rer quel sprites doivent s'afficher Ã  quelle frame.
 	 * 
 	 * @see EnsembleDeSprites
 	 */
@@ -128,37 +128,37 @@ public class Sprites {
 	public static Image spriteRockford;
 
 	/**
-	 * Entier représentant la vitesse d'animation des amibes.
+	 * Entier reprÃ©sentant la vitesse d'animation des amibes.
 	 */
 	public static final int VITESSE_ANIM_AMIBES = 20;
 
 	/**
-	 * Entier représentant la vitesse d'animation des lucioles.
+	 * Entier reprÃ©sentant la vitesse d'animation des lucioles.
 	 */
 	public static final int VITESSE_ANIM_LUCIOLES = 10;
 
 	/**
-	 * Entier représentant la vitesse d'animation de Rockford.
+	 * Entier reprÃ©sentant la vitesse d'animation de Rockford.
 	 */
 	public static final int VITESSE_ANIM_ROCKFORD = 5;
 
 	/**
-	 * Entier représentant la vitesse d'animation des libellules.
+	 * Entier reprÃ©sentant la vitesse d'animation des libellules.
 	 */
 	public static final int VITESSE_ANIM_LIBELLULES = 10;
 
 	/**
-	 * Entier représentant la vitesse d'animation des diamants.
+	 * Entier reprÃ©sentant la vitesse d'animation des diamants.
 	 */
 	public static final int VITESSE_ANIM_DIAMANTS = 30;
 
 	/**
-	 * Entier représentant la vitesse d'animation des murs magiques.
+	 * Entier reprÃ©sentant la vitesse d'animation des murs magiques.
 	 */
 	public static final int VITESSE_ANIM_MURS_MAGIQUES = 30;
 
 	/**
-	 * Entier représentant la vitesse d'animation des explosions.
+	 * Entier reprÃ©sentant la vitesse d'animation des explosions.
 	 */
 	public static final int VITESSE_ANIM_EXPLOSIONS = 15;
 
@@ -167,9 +167,9 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode est appelée par le programme avant chaque frame.
+	 * Cette mÃ©thode est appelÃ©e par le programme avant chaque frame.
 	 * 
-	 * Elle appelle deux autres méthodes qui vont désigner quels sprites
+	 * Elle appelle deux autres mÃ©thodes qui vont dï¿½signer quels sprites
 	 * afficher.
 	 * 
 	 * @param compteurFPS
@@ -183,10 +183,10 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode choisit pour chaque liste de sprites, quel sprite se
-	 * situera en première positions de la liste.
+	 * Cette mÃ©thode choisit pour chaque liste de sprites, quel sprite se
+	 * situera en premiÃ¨re positions de la liste.
 	 * 
-	 * C'est ce sprite là qui sera affiché pour représenter l'entitée.
+	 * C'est ce sprite la qui sera affichÃ© pour reprÃ©senter l'entitÃ©e.
 	 * 
 	 * @param compteurFPS
 	 *            Le compteur de FPS.
@@ -205,10 +205,10 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode choisit quel sprite représentera Rockford.
+	 * Cette mÃ©thode choisit quel sprite reprÃ©sentera Rockford.
 	 * 
-	 * Elle prend l'instance de Rockford en paramètre pour connaitre son état et
-	 * ainsi choisir le sprite adapté.
+	 * Elle prend l'instance de Rockford en paramÃ¨tre pour connaitre son Ã©tat et
+	 * ainsi choisir le sprite adaptÃ©.
 	 * 
 	 * @param compteurFPS
 	 *            Le compteur de FPS.
@@ -238,7 +238,7 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode est appelée par
+	 * Cette mÃ©thode est appelÃ©e par
 	 * {@link Sprites#gererSpriteRockford(long, Rockford)} afin de changer la
 	 * direction des sprites de Rockford.
 	 * 
@@ -259,16 +259,16 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode est appelée statiquement par le programme afin de charger
+	 * Cette mÃ©thode est appelÃ©e statiquement par le programme afin de charger
 	 * les sprites.
 	 * 
-	 * Elle prend en paramètre le dossier où se trouvent les images et lis
-	 * toutes les images présentent dans ce fichier et les mets dans
-	 * {@link Sprites#CHARGEMENT_SPRITES} avec le nom du fichier en clé et
+	 * Elle prend en paramÃ¨tre le dossier ou se trouvent les images et lis
+	 * toutes les images prÃ©sentent dans ce fichier et les mets dans
+	 * {@link Sprites#CHARGEMENT_SPRITES} avec le nom du fichier en clÃ© et
 	 * l'image en valeur.
 	 * 
-	 * Ensuite elle appele des méthodes permettant de répartir les images de
-	 * {@link Sprites#CHARGEMENT_SPRITES} dans les listes apropriées.
+	 * Ensuite elle appele des mÃ©thodes permettant de rÃ©partir les images de
+	 * {@link Sprites#CHARGEMENT_SPRITES} dans les listes apropriÃ©es.
 	 * 
 	 * @param cheminDossier
 	 *            Le dossier contenant les images.
@@ -309,7 +309,7 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode change le sprite de {@link Sprites#SPRITES_SORTIE} pour y
+	 * Cette mÃ©thode change le sprite de {@link Sprites#SPRITES_SORTIE} pour y
 	 * mettre le sprite du mur en titane.
 	 */
 	public static void cacherSortie() {
@@ -317,7 +317,7 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode change le sprite de {@link Sprites#SPRITES_SORTIE} pour y
+	 * Cette mÃ©thode change le sprite de {@link Sprites#SPRITES_SORTIE} pour y
 	 * mettre le sprite de la sortie.
 	 */
 	public static void devoilerSortie() {
@@ -325,8 +325,8 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
-	 * les sprites du camouflage de Rockford dans la liste apropriée.
+	 * Cette mÃ©thode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
+	 * les sprites du camouflage de Rockford dans la liste apropriÃ©e.
 	 */
 	private static void chargerSpritesCamouflage() {
 		SPRITES_CAMOUFLAGE.add(CHARGEMENT_SPRITES.get("camouflage.png"));
@@ -334,8 +334,8 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
-	 * les sprites des libellules dans la liste apropriée.
+	 * Cette mÃ©thode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
+	 * les sprites des libellules dans la liste apropriÃ©e.
 	 */
 	private static void chargerSpritesLibellules() {
 		SPRITES_LIBELLULES.add(CHARGEMENT_SPRITES.get("libellule1.png"));
@@ -346,8 +346,8 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
-	 * les sprites des explosions dans la liste apropriée.
+	 * Cette mÃ©thode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
+	 * les sprites des explosions dans la liste apropriÃ©e.
 	 */
 	private static void chargerSpritesExplosions() {
 		SPRITES_EXPLOSIONS.add(CHARGEMENT_SPRITES.get("explosioncailloux2.png"));
@@ -358,8 +358,8 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
-	 * les sprites des lucioles dans la liste apropriée.
+	 * Cette mÃ©thode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
+	 * les sprites des lucioles dans la liste apropriÃ©e.
 	 */
 	private static void chargerSpritesLucioles() {
 		SPRITES_LUCIOLES.add(CHARGEMENT_SPRITES.get("luciole1.png"));
@@ -370,8 +370,8 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
-	 * les sprites des amibes dans la liste apropriée.
+	 * Cette mÃ©thode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
+	 * les sprites des amibes dans la liste apropriÃ©e.
 	 */
 	private static void chargerSpritesAmibes() {
 		SPRITES_AMIBES.add(CHARGEMENT_SPRITES.get("amibe.png"));
@@ -386,8 +386,8 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
-	 * les sprites des diamants dans la liste apropriée.
+	 * Cette mÃ©thode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
+	 * les sprites des diamants dans la liste apropriÃ©e.
 	 */
 	private static void chargerSpritesDiamants() {
 		SPRITES_DIAMANTS.add(CHARGEMENT_SPRITES.get("diamant.png"));
@@ -402,8 +402,8 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
-	 * les sprites des murs magiques dans la liste apropriée.
+	 * Cette mÃ©thode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
+	 * les sprites des murs magiques dans la liste apropriÃ©e.
 	 */
 	private static void chargerSpritesMursMagiques() {
 		SPRITES_MURS_MAGIQUES.add(CHARGEMENT_SPRITES.get("magique.png"));
@@ -416,8 +416,8 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
-	 * les sprites des listes de sprites de Rockford dans la liste apropriée.
+	 * Cette mÃ©thode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
+	 * les sprites des listes de sprites de Rockford dans la liste apropriÃ©e.
 	 */
 	private static void chargerSpritesRockford() {
 		for (int i = 0; i < 15; i++)
@@ -454,24 +454,24 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
-	 * le sprite du mur dans la liste apropriée.
+	 * Cette mÃ©thode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
+	 * le sprite du mur dans la liste apropriÃ©e.
 	 */
 	private static void chargerSpritesMurs() {
 		SPRITES_MURS.add(CHARGEMENT_SPRITES.get("mur.png"));
 	}
 
 	/**
-	 * Cette méthode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
-	 * le sprite de la pierre dans la liste apropriée.
+	 * Cette mÃ©thode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
+	 * le sprite de la pierre dans la liste apropriÃ©e.
 	 */
 	private static void chargerSpritesPierres() {
 		SPRITES_PIERRES.add(CHARGEMENT_SPRITES.get("roc.png"));
 	}
 
 	/**
-	 * Cette méthode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
-	 * les sprites de la sortie dans la liste apropriée.
+	 * Cette mÃ©thode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
+	 * les sprites de la sortie dans la liste apropriÃ©e.
 	 */
 	private static void chargerSpritesSortie() {
 		SPRITES_SORTIE.add(CHARGEMENT_SPRITES.get("titane.png"));
@@ -479,24 +479,24 @@ public class Sprites {
 	}
 
 	/**
-	 * Cette méthode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
-	 * le sprite des murs en titane dans la liste apropriée.
+	 * Cette mÃ©thode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
+	 * le sprite des murs en titane dans la liste apropriÃ©e.
 	 */
 	private static void chargerSpritesMursEnTitane() {
 		SPRITES_MURS_EN_TITANE.add(CHARGEMENT_SPRITES.get("titane.png"));
 	}
 
 	/**
-	 * Cette méthode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
-	 * le sprite de la poussière dans la liste apropriée.
+	 * Cette mÃ©thode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
+	 * le sprite de la poussiï¿½re dans la liste apropriÃ©e.
 	 */
 	private static void chargerSpritesPoussieres() {
 		SPRITES_POUSSIERES.add(CHARGEMENT_SPRITES.get("poussiere.png"));
 	}
 
 	/**
-	 * Cette méthode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
-	 * le sprite de la bombe dans la liste apropriée.
+	 * Cette mÃ©thode regarde dans {@link Sprites#CHARGEMENT_SPRITES} et dispose
+	 * le sprite de la bombe dans la liste apropriÃ©e.
 	 */
 	private static void chargerSpritesBombe() {
 		SPRITES_BOMBE.add(CHARGEMENT_SPRITES.get("Bombe.png"));

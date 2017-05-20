@@ -1,7 +1,6 @@
 package vue;
 
 import java.util.List;
-import java.util.Scanner;
 
 import entitees.abstraites.Entitee;
 import entitees.fixes.Amibe;
@@ -19,8 +18,8 @@ import loader.Niveau;
 import main.Partie;
 
 /**
- * La classe GraphiqueConsole n'est jamais instanci�e, elle sert uniquement �
- * stocker des m�thodes en rapport avec l'affichage du jeu en mode console.
+ * La classe GraphiqueConsole n'est jamais instanciée, elle sert uniquement à
+ * stocker des méthodes en rapport avec l'affichage du jeu en mode console.
  * 
  * @author Murloc
  *
@@ -31,25 +30,25 @@ public class GraphiqueConsole {
 	 * Affiche un niveau en mode console.
 	 * 
 	 * @param niveau
-	 *            Le niveau � afficher.
+	 *            Le niveau à afficher.
 	 */
 	public static void afficher(Niveau niveau) {
 		// Get la map du niveau.
 		Entitee[][] map = niveau.getMap();
 
 		/*
-		 * Initialise un string auquel va �tre concat�n� la repr�sentation du
-		 * niveau, ce string sera affich� � la fin de la m�thode.
+		 * Initialise un string auquel va être concaténé la représentation du
+		 * niveau, ce string sera affiché à la fin de la méthode.
 		 */
 		String s = "";
 
-		// Concat�ne beaucoup de retours � la ligne pour un meilleur rendu.
+		// Concatène beaucoup de retours à la ligne pour un meilleur rendu.
 		for (int i = 0; i <= 30; i++) {
 			s += "\n";
 		}
 
 		/*
-		 * Concat�ne diverses informations.
+		 * Concatène diverses informations.
 		 */
 		s += ("Diamants : " + Partie.gererNiveau.getNbDiamants() + "/"
 				+ Partie.gererNiveau.getNiveau().getDiamonds_required() + "\n");
@@ -73,22 +72,22 @@ public class GraphiqueConsole {
 	}
 
 	/**
-	 * Retourne un caract�re sp�ficique suivant l'entit�e en param�tre.
+	 * Retourne un caractère spéficique suivant l'entitée en paramètre.
 	 * 
 	 * @param e
-	 *            L'entit�e dont on veut le caract�re.
-	 * @return Le caract�re propre � l'entit�e. Renvoie ' ' si l'enti�e est
-	 *         inconnue (ou si c'est l'entit�e Vide).
+	 *            L'entitée dont on veut le caractère.
+	 * @return Le caractère propre à l'entitée. Renvoie ' ' si l'entiée est
+	 *         inconnue (ou si c'est l'entitée Vide).
 	 */
 	public static char getCharDeEntitee(Entitee e) {
-		// Get la classe de l'entit�e.
+		// Get la classe de l'entitée.
 		Class<? extends Entitee> l = e.getClass();
 
-		// Cr�e le char qui va �tre renvoy�.
+		// Crée le char qui va être renvoyé.
 		char s = ' ';
 
 		/*
-		 * Compare la classe avec les classes des entit�es, puis affecte le char
+		 * Compare la classe avec les classes des entitées, puis affecte le char
 		 * correspondant au string.
 		 */
 		if (l.equals(Rockford.class)) {
@@ -122,12 +121,12 @@ public class GraphiqueConsole {
 	}
 
 	/**
-	 * Affiche le score � la fin d'un niveau.
+	 * Affiche le score à la fin d'un niveau.
 	 * 
 	 * @param niveau
 	 *            Le niveau fini.
 	 * @param score
-	 *            Le score � afficher.
+	 *            Le score à afficher.
 	 */
 	public static void afficherScoreUnNiveau(int niveau, int score) {
 		if (!Partie.IA && !Partie.lecture)
@@ -135,10 +134,10 @@ public class GraphiqueConsole {
 	}
 
 	/**
-	 * Affiche les scores � la fin d'une suite de niveaux.
+	 * Affiche les scores à la fin d'une suite de niveaux.
 	 * 
 	 * @param scores
-	 *            La liste des scores � afficher.
+	 *            La liste des scores à afficher.
 	 */
 	public static void afficherScoreTousLesNiveaux(List<Integer> scores) {
 		System.out.println("FIN DU JEU , SCORE DES NIVEAUX : \n");
