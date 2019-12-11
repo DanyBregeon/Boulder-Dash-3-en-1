@@ -1,8 +1,8 @@
 Trajet : dhhdddddddddddddddbbbbbbgagbbgbbggggggggghgbgggggggghggbggggggghgggbhhhhhhhhhddhdbbdddhhddddddddhdaahhhhhdddbbbbgbbbbbbgbggbhgdddddddbdddbhdbddddbbbdddddhhghhhgghhhhghggggghggggghhgghgghghghggggggggbbbdbbddddbdddbddbgdbbgdhhbd
 
--rejoue weshwesh.bd ArnoDash01.txt -niveau 3
+-rejoue test.bd ArnoDash01.txt -niveau 3
 
--rejoue weshwesh.bd niveau.txt -niveau 6
+-rejoue test.bd niveau.txt -niveau 6
 
 -cal -evolue 10 ArnoDash01.txt -niveau 3
 

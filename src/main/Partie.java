@@ -97,7 +97,7 @@ public class Partie {
     /**
      * Stock la date actuel, utile pour sauvegarder à la fin l'essai.
      */
-    public static DateFormat df = new SimpleDateFormat("dd:MM:yyyy_HH:mm:ss");
+    public static DateFormat df = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss");
 
     /**
      * Utile pour la date.
@@ -436,7 +436,7 @@ public class Partie {
         } else {
             chemin += "Essais_Humain/";
         }
-        chemin += dateDebut + "/";
+        chemin += dateDebut + "/";        
 
         outils.Ecrivain.ecrire(essai, "Niveau_" + niveau + ".dash", chemin);
         return chemin + "Niveau_" + niveau + ".dash";

@@ -26,6 +26,7 @@ public class Ecrivain {
         try {
             File dir = new File(repertoire);
             dir.mkdirs();
+            System.out.println(repertoire + nom);
             File destinationFile = new File(repertoire + nom);
             destinationFile.createNewFile();
             PrintWriter ecrivain = new PrintWriter(repertoire + nom, "UTF-8");
